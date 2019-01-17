@@ -43,7 +43,7 @@ int Ceilling(std::vector<int> &a, int key)
 Found the left most value after key, with binary search so it should be: (O)logn,
 e.g:
 array: 1,2,3,4,5; key: 3
-return:  ^			[4]
+return:  ^	  [2]
 
 Work like std::lower_bound;
 */
