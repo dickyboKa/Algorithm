@@ -152,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Searching\BinarySearchh.h" />
     <ClInclude Include="Searching\ClosestElement.h" />
+    <ClInclude Include="Searching\CommonElement.h" />
     <ClInclude Include="Searching\RepeatedElement.h" />
     <ClInclude Include="Searching\RotateArray.h" />
   </ItemGroup>
