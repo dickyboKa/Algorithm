@@ -23,9 +23,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Searching\BinarySearchh.h">
-      <Filter>Header Files\Searching</Filter>
-    </ClInclude>
     <ClInclude Include="Searching\ClosestElement.h">
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
@@ -36,6 +33,12 @@
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
     <ClInclude Include="Searching\RotateArray.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Searching\CountOne.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Searching\BinarySearch.h">
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
   </ItemGroup>

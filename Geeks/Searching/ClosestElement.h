@@ -1,5 +1,5 @@
 #include <algorithm>
-#include "BinarySearchh.h"
+#include "BinarySearch.h"
 
 // copy an element from array, point by left and right index
 void getSurroundElement(int l, int r, int k, int key, std::vector<int> i, std::vector<int> &o)
@@ -35,8 +35,8 @@ std::vector<int> findClosestElementOf(std::vector<int> a, int key, int howMany)
 	std::vector<int> temp;
 	if (a.size() < howMany)
 		return temp; //array is less than values wanted just no way
-	int l = Floor(a, 0, a.size() / 2, a.size() - 1, key);
-	int r = Ceilling(a, 0, a.size() / 2, a.size() - 1, key);
+	int l = Floor(a, key);
+	int r = Ceilling(a, key);
 
 	(a[l] == key) ? l = l - 1 : l = l;
 	(a[r] == key) ? r = r + 1 : r = r;
