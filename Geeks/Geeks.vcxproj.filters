@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Searching">
+      <UniqueIdentifier>{ae0587c1-d0c2-403a-92da-ff862691e43f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Geeks.cpp">
@@ -20,20 +23,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Searching\RotateArray.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Searching\BinarySearchh.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Searching</Filter>
     </ClInclude>
     <ClInclude Include="Searching\ClosestElement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Searching\RepeatedElement.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Searching</Filter>
     </ClInclude>
     <ClInclude Include="Searching\CommonElement.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Searching\RepeatedElement.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Searching\RotateArray.h">
+      <Filter>Header Files\Searching</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
