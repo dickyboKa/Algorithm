@@ -157,6 +157,7 @@
     <ClInclude Include="Searching\PairSortedArray.h" />
     <ClInclude Include="Searching\RepeatedElement.h" />
     <ClInclude Include="Searching\RotateArray.h" />
+    <ClInclude Include="Searching\SmallestElement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

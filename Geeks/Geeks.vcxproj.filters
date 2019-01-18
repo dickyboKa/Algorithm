@@ -44,5 +44,8 @@
     <ClInclude Include="Searching\PairSortedArray.h">
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
+    <ClInclude Include="Searching\SmallestElement.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
