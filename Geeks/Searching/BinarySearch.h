@@ -1,5 +1,6 @@
 #include <vector>
 
+
 // Normal Binary Search (O)logn
 int binarySearch(std::vector<int> &a, int beg, int mid, int end, int key)
 {
@@ -15,6 +16,21 @@ int binarySearch(std::vector<int> &a, int beg, int mid, int end, int key)
 int IntSearch(std::vector<int> &a, int key)
 {
 	return binarySearch(a, 0, a.size() / 2, a.size(), key);
+}
+
+// answer to: https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/
+int infiniteSearch(std::vector<int> &a, int key)
+{
+	//assume the array is infinite, if its not then there would be index out of bound
+	int low = 0; int hi = 1;
+	while (true)
+	{
+		if (key < a[hi])
+			break;
+		low = hi;
+		hi = hi * 2;
+	}
+	return binarySearch(a, low, (hi - low)/2, hi, key);
 }
 /*
 Found the righ most value after key, with binary search so it should be: (O)logn,
@@ -62,3 +78,4 @@ int FLoor(std::vector<int> &a, int key)
 {
 	return Floor(a, 0, a.size() / 2, a.size(), key);
 }
+
