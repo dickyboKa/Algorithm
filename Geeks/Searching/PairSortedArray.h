@@ -1,6 +1,6 @@
 #include <vector>
 #include <cmath>
-
+#include <algorithm>
 /*
 answer to geek exercises: https://www.geeksforgeeks.org/given-sorted-array-number-x-find-pair-array-whose-sum-closest-x/
 */
@@ -89,4 +89,24 @@ std::pair<int, int> findThePairByTheSum(std::vector<int> &A, std::vector<int> &B
 			++r_it;
 	}
 	return std::pair<int, int>(a, b);
+}
+
+int findLargestSumPair(std::vector<int> &a)
+{
+	int first = std::max(a[0], a[1]);
+	int second = std::min(a[0], a[1]);
+
+	for (int i = 2; i < a.size(); ++i)
+	{
+		if (a[i] > first)
+		{
+			second = first;
+			first = a[i];
+		}
+		else if (a[i] > second && a[i] != first)
+		{
+			second = a[i];
+		}
+	}
+	return first + second;;
 }
