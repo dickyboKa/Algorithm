@@ -75,13 +75,12 @@ std::vector<std::pair<int, int>> findPairWithGivenSum(std::vector<int> &a, int s
 }
 
 // for this nlogn + n and extra space
-std::vector<std::pair<int, int>> findPairWithGivenSumWithSorting(std::vector<int> &a, int sum)
+std::vector<std::pair<int, int>> findPairWithGivenSumWithSorting(std::vector<int> a, int sum)
 {
 	std::vector<std::pair<int, int>> sum_collections;
-	std::vector<int> temp = a;
-	std::sort(temp.begin(), temp.end());
-	auto l_it = temp.begin();
-	auto r_it = --temp.end();
+	std::sort(a.begin(), a.end());
+	auto l_it = a.begin();
+	auto r_it = --a.end();
 	while (l_it != r_it)
 	{
 		if ((*l_it + *r_it) == sum)
