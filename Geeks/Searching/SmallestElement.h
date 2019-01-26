@@ -1,7 +1,9 @@
 #include <vector>
 #include <algorithm>
 #include <string>
-
+#include <set>
+#include <functional>
+#include <iostream>
 /* this O(nlogn) 
 answer to: https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
 */
@@ -38,3 +40,50 @@ std::vector<std::string> prevSmallesElement(std::vector<int> &a)
 	}
 	return result;
 }
+
+
+/*
+answer to: https://www.geeksforgeeks.org/kth-largest-element-in-a-stream/
+This should be O(logn) for inseert, erase, because std set use RBT data structure
+*/
+template<typename T>
+class LimMinSet 
+{
+public:
+	LimMinSet(int e) : m_max_size(e){}
+
+	auto cbegin()
+	{
+		return m_min_set.cbegin();
+	}
+
+	auto cend()
+	{
+		return m_min_set.cend();
+	}
+
+	void insert(T t)
+	{
+		if (m_min_set.size() == m_max_size)
+		{
+			if (t > *m_min_set.cbegin())
+			{
+				m_min_set.erase(m_min_set.begin());
+				m_min_set.insert(t);
+			}
+		}
+		else
+			m_min_set.insert(t);
+	}
+
+	void printLargestElement()
+	{
+		if (m_min_set.size() < m_max_size)
+			return;
+		std::cout << m_max_size << "'th largest element is " << *m_min_set.cbegin() << std::endl;
+	}
+
+private:
+	int m_max_size;
+	std::set<T> m_min_set;
+};
