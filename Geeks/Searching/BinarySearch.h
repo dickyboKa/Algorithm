@@ -78,4 +78,3 @@ int FLoor(std::vector<int> &a, int key)
 {
 	return Floor(a, 0, a.size() / 2, a.size(), key);
 }
-
