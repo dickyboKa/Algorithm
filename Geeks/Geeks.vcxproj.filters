@@ -50,5 +50,8 @@
     <ClInclude Include="Searching\SortedArray.h">
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
+    <ClInclude Include="Searching\LargestElement.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
