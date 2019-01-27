@@ -110,3 +110,43 @@ int findLargestSumPair(std::vector<int> &a)
 	}
 	return first + second;;
 }
+
+/*
+answer to: https://www.geeksforgeeks.org/return-a-pair-with-maximum-product-in-array-of-integers/
+O(n)
+*/
+std::pair<int, int> findLargestProductPair(std::vector<int> &a)
+{
+	//variable for keeping track the biggest positive value, and the smalles negative value
+	int pos_first, pos_second, neg_first, neg_second;
+	pos_first = pos_second = INT_MAX;
+	neg_first = neg_second = INT_MIN;
+
+	
+	for (auto it = a.cbegin(); it != a.cend(); ++it)
+	{
+		// update positive value
+		if (*it > pos_first)
+		{
+			pos_second = pos_first;
+			pos_first = *it;
+		}
+		else if (*it > pos_second)
+			pos_second = *it;
+
+		// update negative value
+		if (*it < 0 && abs(*it) > abs(neg_first))
+		{
+			neg_second = neg_first;
+			neg_first = *it;
+		}
+		else if (*it < 0 && abs(*it) > abs(neg_second))
+			neg_second = *it;
+
+	}
+
+	if (neg_first*neg_second > pos_first * pos_second)
+		return std::make_pair(neg_first, neg_second);
+	else
+		return std::make_pair(pos_first, pos_second);
+}
