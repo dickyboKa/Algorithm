@@ -35,7 +35,7 @@ std::vector<int> findClosestElementOf(std::vector<int> a, int key, int howMany)
 	std::vector<int> temp;
 	if (a.size() < howMany)
 		return temp; //array is less than values wanted just no way
-	int l = Floor(a, key);
+	int l = Floor(a, 0, a.size() / 2, a.size(), key); // no idea way can called the floor with fewer argument
 	int r = Ceilling(a, key);
 
 	(a[l] == key) ? l = l - 1 : l = l;
@@ -63,4 +63,43 @@ std::vector<int> findCloesestElementOfUsingStd(std::vector<int> a, int key, int 
 
 	getSurroundElement(l, r, howMany, key, a, temp);
 	return temp;
+}
+
+/*
+asnwer to: https://www.geeksforgeeks.org/find-three-closest-elements-from-given-three-sorted-arrays/
+O(n)
+*/
+std::vector<int> findThreeClosesElement(std::vector<int> &a, std::vector<int> &b, std::vector<int> &c)
+{
+	int diff = std::numeric_limits<int>::max();
+	int elem_a, elem_b, elem_c;
+
+	std::vector<int>::const_iterator a_it = a.cbegin();
+	std::vector<int>::const_iterator b_it = b.cbegin();
+	std::vector<int>::const_iterator c_it = c.cbegin();
+
+	while (a_it != a.cend() && b_it != b.cend() && c_it != c.cend())
+	{
+		int max = std::max(*a_it, std::max(*b_it, *c_it));
+		int min = std::min(*a_it, std::min(*b_it, *c_it));
+
+		if (max - min < diff)
+		{
+			diff = max - min;
+			elem_a = *a_it; elem_b = *b_it; elem_c = *c_it;
+		}
+
+		if (diff == 0)
+			break; 
+
+		// to get closer to the smallest diff between element, up the smallest value
+		if (*a_it == min)
+			++a_it;
+		else if (*b_it == min)
+			++b_it;
+		else
+			++c_it;
+	}
+
+	return std::vector<int>{elem_a, elem_b, elem_c};
 }
