@@ -158,6 +158,7 @@
     <ClInclude Include="Searching\PairSortedArray.h" />
     <ClInclude Include="Searching\RepeatedElement.h" />
     <ClInclude Include="Searching\RotateArray.h" />
+    <ClInclude Include="Searching\SearchElement.h" />
     <ClInclude Include="Searching\SmallestElement.h" />
     <ClInclude Include="Searching\SortedArray.h" />
   </ItemGroup>
