@@ -8,7 +8,7 @@ this should be: O(n)
 std::vector<int> findlargestElement(std::vector<int> &a)
 {
 	int first, second, third;
-	first = second = third = INT_MIN;
+	first = second = third = std::numeric_limits<int>::min();
 
 	for (auto it = a.cbegin(); it != a.cend(); ++it)
 	{

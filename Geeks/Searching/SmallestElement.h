@@ -52,6 +52,14 @@ class LimMinSet
 public:
 	LimMinSet(int e) : m_max_size(e){}
 
+	LimMinSet(int e, std::vector<T> &a) : m_max_size(e)
+	{
+		for (auto it = a.cbegin(); it != a.cend(); ++it)
+		{
+			insert(*it);
+		}
+	}
+
 	auto cbegin()
 	{
 		return m_min_set.cbegin();
