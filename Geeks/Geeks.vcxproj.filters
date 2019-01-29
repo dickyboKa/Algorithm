@@ -56,5 +56,8 @@
     <ClInclude Include="Searching\SearchElement.h">
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
+    <ClInclude Include="Searching\RationalArray.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
