@@ -35,7 +35,7 @@ std::vector<int> findClosestElementOf(std::vector<int> a, int key, int howMany)
 	std::vector<int> temp;
 	if (a.size() < howMany)
 		return temp; //array is less than values wanted just no way
-	int l = Floor(a, 0, a.size() / 2, a.size(), key); // no idea way can called the floor with fewer argument
+	int l = Floor(a, key);
 	int r = Ceilling(a, key);
 
 	(a[l] == key) ? l = l - 1 : l = l;

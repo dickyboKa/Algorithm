@@ -74,7 +74,8 @@ int Floor(std::vector<int> &a, int beg, int mid, int end, int key)
 	else
 		return Floor(a, beg, beg + ((mid - beg) / 2), mid, key);
 }
-int FLoor(std::vector<int> &a, int key)
+
+int Floor(std::vector<int> &a, int key)
 {
 	return Floor(a, 0, a.size() / 2, a.size(), key);
 }
