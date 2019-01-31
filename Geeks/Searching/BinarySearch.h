@@ -1,6 +1,5 @@
 #include <vector>
 
-
 // Normal Binary Search (O)logn
 int binarySearch(std::vector<int> &a, int beg, int mid, int end, int key)
 {
@@ -34,18 +33,13 @@ int infiniteSearch(std::vector<int> &a, int key)
 }
 /*
 Found the righ most value after key, with binary search so it should be: (O)logn,
-e.g:
-array: 1,2,3,4,5; key: 3
-return:      ^     [4]
-
-Work like std::upper_bound;
 */
 int Ceilling(std::vector<int> &a, int beg, int mid, int end, int key)
 {
 	if (key < a[0])
 		return  -1;
 	else if (end - beg == 1)
-		return mid;
+		return end;
 	else if (key < a[mid])
 		return Ceilling(a, beg, beg + ((mid - beg) / 2), mid, key);
 	else
@@ -53,22 +47,17 @@ int Ceilling(std::vector<int> &a, int beg, int mid, int end, int key)
 }
 int Ceilling(std::vector<int> &a, int key)
 {
-	return Ceilling(a, 0, a.size() / 2, a.size(), key);
+	return Ceilling(a, 0, a.size() / 2, a.size() , key);
 }
 /*
 Found the left most value after key, with binary search so it should be: (O)logn,
-e.g:
-array: 1,2,3,4,5; key: 3
-return:  ^	  [2]
-
-Work like std::lower_bound;
 */
 int Floor(std::vector<int> &a, int beg, int mid, int end, int key)
 {
 	if (key < a[0])
 		return  -1;
 	else if (end - beg == 1)
-		return mid;
+		return beg;
 	else if (key > a[mid])
 		return Floor(a, mid, mid + ((end - mid) / 2), end, key);
 	else

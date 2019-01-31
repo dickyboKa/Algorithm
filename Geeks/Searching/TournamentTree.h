@@ -2,6 +2,9 @@
 #include <vector>
 
 
+/*
+answer to: https://www.geeksforgeeks.org/second-minimum-element-using-minimum-comparisons/
+*/
 
 class TourNamentTree 
 {

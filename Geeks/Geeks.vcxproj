@@ -157,6 +157,7 @@
     <ClInclude Include="Searching\CountOne.h" />
     <ClInclude Include="Searching\LargestElement.h" />
     <ClInclude Include="Searching\PairSortedArray.h" />
+    <ClInclude Include="Searching\Queries.h" />
     <ClInclude Include="Searching\RationalArray.h" />
     <ClInclude Include="Searching\RepeatedElement.h" />
     <ClInclude Include="Searching\RotateArray.h" />

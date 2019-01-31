@@ -38,8 +38,8 @@ std::vector<int> findClosestElementOf(std::vector<int> a, int key, int howMany)
 	int l = Floor(a, key);
 	int r = Ceilling(a, key);
 
-	(a[l] == key) ? l = l - 1 : l = l;
-	(a[r] == key) ? r = r + 1 : r = r;
+	//(a[l] == key) ? l = l - 1 : l = l;
+	//(a[r] == key) ? r = r + 1 : r = r;
 
 	getSurroundElement(l, r, howMany, key, a, temp);
 	return temp;
