@@ -21,6 +21,9 @@
     <ClCompile Include="Geeks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Searching\TournamentTree.cpp">
+      <Filter>Header Files\Searching</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Searching\ClosestElement.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
     <ClInclude Include="Searching\RationalArray.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Searching\TournamentTree.h">
       <Filter>Header Files\Searching</Filter>
     </ClInclude>
   </ItemGroup>

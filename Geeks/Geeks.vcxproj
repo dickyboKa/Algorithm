@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Geeks.cpp" />
+    <ClCompile Include="Searching\TournamentTree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Searching\BinarySearch.h" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Searching\SearchElement.h" />
     <ClInclude Include="Searching\SmallestElement.h" />
     <ClInclude Include="Searching\SortedArray.h" />
+    <ClInclude Include="Searching\TournamentTree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
