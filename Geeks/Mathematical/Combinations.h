@@ -1,6 +1,6 @@
 #include <vector>
 #include <iostream>
-
+#include <algorithm>
 
 /*
 Answer to geeks: https://www.geeksforgeeks.org/find-all-combinations-that-adds-upto-given-number-2/
@@ -77,3 +77,43 @@ void consecutiveNumbersSum(int N)
 
 }
 
+
+/*
+answer to: https://www.geeksforgeeks.org/minimum-time-required-produce-m-items/
+with a combinations of machine that take time differently to finish a job, found the minimum time to finish M jobs
+*/
+
+int itemsProduce(std::vector<int> &m_machines, int times)
+{
+	int items = 0;
+	for(auto it = m_machines.cbegin(); it != m_machines.cend(); ++it)
+		items += (times / *it);
+	return items;
+}
+
+int bsMinimumTimes(std::vector<int> &m_machines, int jobs, int high)
+{
+	int low = 1;
+	while (low < high)
+	{
+		int mid = low + (high - low) / 2;
+
+		int items = itemsProduce(m_machines, mid);
+
+		if (items < jobs)
+			low = mid + 1;
+
+		else
+			high = mid;
+	}
+	return high;
+}
+
+int minimumTimeToFinishJob(std::vector<int> &m_machines, int jobs)
+{
+	int max_times = std::numeric_limits<int>::min();
+	for (auto it = m_machines.cbegin(); it != m_machines.cend(); ++it)
+		max_times = std::max(max_times, *it);
+
+	return bsMinimumTimes(m_machines, jobs, max_times * jobs);
+}
