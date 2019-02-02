@@ -151,6 +151,7 @@
     <ClCompile Include="Searching\TournamentTree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Mathematical\Combinations.h" />
     <ClInclude Include="Searching\BinarySearch.h" />
     <ClInclude Include="Searching\ClosestElement.h" />
     <ClInclude Include="Searching\CommonElement.h" />

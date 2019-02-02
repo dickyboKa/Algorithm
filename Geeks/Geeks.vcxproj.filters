@@ -16,6 +16,9 @@
     <Filter Include="Header Files\Searching">
       <UniqueIdentifier>{ae0587c1-d0c2-403a-92da-ff862691e43f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Mathematical">
+      <UniqueIdentifier>{d8778f82-ac4e-4d75-a800-85ecab243d03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Geeks.cpp">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Searching\Queries.h">
       <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Mathematical\Combinations.h">
+      <Filter>Header Files\Mathematical</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
