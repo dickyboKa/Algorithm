@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <unordered_set>
 
 /*
 Answer to geeks: https://www.geeksforgeeks.org/find-all-combinations-that-adds-upto-given-number-2/
@@ -116,4 +117,50 @@ int minimumTimeToFinishJob(std::vector<int> &m_machines, int jobs)
 		max_times = std::max(max_times, *it);
 
 	return bsMinimumTimes(m_machines, jobs, max_times * jobs);
+}
+
+
+/*
+Answer to Exercises: https://www.geeksforgeeks.org/check-exist-two-elements-array-whose-sum-equal-sum-rest-array/
+*/
+std::vector<std::pair<int, int>> findPairWithSum(std::vector<int> &a, int sum)
+{
+	std::unordered_set<int> s;
+	std::vector<std::pair<int, int>> r;
+
+	for (auto it = a.cbegin(); it != a.cend(); ++it)
+	{
+		int check = sum - *it;
+		if (check >= 0 && s.find(check) != s.end())
+		{
+			r.push_back(std::make_pair(*it, check));
+		}
+		s.insert(*it);
+	}
+
+	return r;
+}
+
+void checkPairSum(std::vector<int> &a)
+{
+	int sum = 0;
+	for (auto it = a.cbegin(); it != a.cend(); ++it)
+		sum += *it;
+
+	if (sum & 1) //odd, no pair.
+	{
+		std::cout << "No Pair Exist" << std::endl;
+		return;
+	}
+	
+	// we essentially try to find a pair that the sum is equal to sum/2;
+	auto pairs = findPairWithSum(a, sum / 2);
+
+	if (!pairs.empty())
+	{
+		for (auto it = pairs.cbegin(); it != pairs.cend(); ++it)
+			std::cout << "Elements are: [" << it->first << ", " << it->second << "]" << std::endl;
+	}
+	else
+		std::cout << "No Pair Exist" << std::endl;
 }
