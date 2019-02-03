@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cmath>
 #include "BinarySearch.h"
 
 // copy an element from array, point by left and right index
@@ -102,4 +103,47 @@ std::vector<int> findThreeClosesElement(std::vector<int> &a, std::vector<int> &b
 	}
 
 	return std::vector<int>{elem_a, elem_b, elem_c};
+}
+
+/*
+Answer to geeks: https://www.geeksforgeeks.org/make-array-elements-equal-minimum-cost/
+Change all the value on array to the same element x, which x is minimum 0..n - x.
+*/
+int computeCost(std::vector<int> &arr, int X)
+{
+	int cost = 0;
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+		cost += abs(*it - X);
+	return cost;
+}
+
+int mininumCostToChange(std::vector<int> &arr)
+{
+	int low, high;
+	low = high = arr[0];
+
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+	{
+		if (*it < low)
+			low = *it;
+		if (*it > high)
+			high = *it;
+	}
+
+	while ((high - low) > 2)
+	{
+		int mid1 = low + (high - low) / 3;
+		int mid2 = high - (high - low) / 3;
+
+		int cost1 = computeCost(arr, mid1);
+		int cost2 = computeCost(arr, mid2);
+
+		if (cost1 < cost2)
+			high = mid2;
+		else
+			low = mid1;
+
+	}
+	//gets optimum cost by sending average of low and high as X 
+	return computeCost(arr, (low + high) / 2);
 }
