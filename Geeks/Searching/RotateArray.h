@@ -3,7 +3,7 @@
 #include <iostream>
 /*
 Solutiont to Geek Exercises: https://www.geeksforgeeks.org/find-minimum-element-in-a-sorted-and-rotated-array/
-This is binary search to found a valey, of a mountaig range of integer
+This is binary search to found a valey, of a mountaig\n range of integer
 */
 int findMinimumElementInRotatedArray(std::vector<int> &a, int beg, int mid, int end)
 {
@@ -96,4 +96,44 @@ std::vector<std::pair<int, int>> findPairWithGivenSumWithSorting(std::vector<int
 	}
 
 	return sum_collections;
+}
+
+/*
+Answer: https://www.geeksforgeeks.org/check-reversing-sub-array-make-array-sorted/
+O(nlogn)
+*/
+
+bool checkReverse(std::vector<int> &arr)
+{
+	std::vector<int> temp(arr);
+
+	std::sort(temp.begin(), temp.end());
+
+	// finding first mismatch
+	int front = 0;
+	for (; front < arr.size(); ++front)
+	{
+		if (temp[front] != arr[front])
+			break;
+	}
+
+	// finding last mismatch
+	int back = 0;
+	for (; back < arr.size(); ++back)
+	{
+		if (temp[back] != arr[back])
+			break;
+	}
+
+	if (front > back) // array is sorted
+		return true;
+
+	while (front < back) //check if its the sub array really is decreasing in order
+	{
+		if (arr[front] < arr[front] + 1)
+			return false;
+		++front;
+	}
+
+	return true;
 }
