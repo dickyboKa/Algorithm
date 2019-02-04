@@ -164,3 +164,62 @@ void checkPairSum(std::vector<int> &a)
 	else
 		std::cout << "No Pair Exist" << std::endl;
 }
+
+struct Triplets
+{
+	Triplets(int X, int Y, int Z) : x(X), y(Y), z(Z) {}
+	int x;
+	int y;
+	int z;
+};
+
+/*
+answer to: https://www.geeksforgeeks.org/find-triplets-array-whose-sum-equal-zero/
+this using hash table, time complexity is: O(n2) with O(n) Auxiliary Space
+*/
+std::vector<Triplets> findTripletsSumWithHash(std::vector<int> &arr, int sum)
+{
+	std::vector<Triplets> r;
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+	{
+		std::unordered_set<int> s;
+		for (auto m_it = it + 1; m_it != arr.cend(); ++m_it)
+		{
+			int check = sum - (*it + *m_it);
+			if (s.find(check) != s.end())
+			{
+				r.push_back(Triplets(check, *it, *m_it));
+			}
+			else
+				s.insert(*m_it);
+		}
+	}
+
+	return r;
+}
+
+std::vector<Triplets> findTripletsSumWithSort(std::vector<int> &arr, int sum)
+{
+	std::vector<Triplets> r;
+	std::sort(arr.begin(), arr.end());
+	for (auto it = arr.cbegin(); it < arr.cend() - 1; ++it)
+	{
+		auto l_it = it + 1;
+		auto r_it = arr.cend() - 1;
+		while (l_it < r_it)
+		{
+			if (*it + *l_it + *r_it == sum)
+			{
+				r.push_back(Triplets(*it, *l_it, *r_it));
+				++l_it;
+				--r_it;
+			}
+			else if (*it + *l_it + *r_it > sum)
+				--r_it;
+			else
+				++l_it;
+		}
+	}
+
+	return r;
+}
