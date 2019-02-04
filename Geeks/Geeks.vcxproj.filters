@@ -74,5 +74,8 @@
     <ClInclude Include="Mathematical\Combinations.h">
       <Filter>Header Files\Mathematical</Filter>
     </ClInclude>
+    <ClInclude Include="Searching\ArrayString.h">
+      <Filter>Header Files\Searching</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
