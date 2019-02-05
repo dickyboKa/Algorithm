@@ -68,41 +68,76 @@ std::vector<int> findCloesestElementOfUsingStd(std::vector<int> a, int key, int 
 
 /*
 asnwer to: https://www.geeksforgeeks.org/find-three-closest-elements-from-given-three-sorted-arrays/
+and also: https://www.geeksforgeeks.org/smallest-difference-triplet-from-three-arrays/
 O(n)
 */
+
+class Triplets
+{
+public:
+	Triplets() = default;
+	Triplets(int X, int Y, int Z)
+	{
+		//let sort the input value
+		int max = std::max(X, std::max(Y, Z));
+		int min = std::min(X, std::min(Y, Z));
+		m_second = (X + Y + Z) - (max + min);
+		m_first = max;
+		m_third = min;
+	}
+
+	// copy constructor
+	Triplets(const Triplets &tr)
+	{
+		m_first = tr.m_first;
+		m_second = tr.m_second;
+		m_third = tr.m_third;
+	}
+	int getDiff() { return (m_first - m_second) + (m_second - m_third); }
+
+	int m_first;
+	int m_second;
+	int m_third;
+};
+
+
 std::vector<int> findThreeClosesElement(std::vector<int> &a, std::vector<int> &b, std::vector<int> &c)
 {
 	int diff = std::numeric_limits<int>::max();
-	int elem_a, elem_b, elem_c;
+	Triplets *result = nullptr;
+	Triplets *check = nullptr;
 
 	std::vector<int>::const_iterator a_it = a.cbegin();
 	std::vector<int>::const_iterator b_it = b.cbegin();
 	std::vector<int>::const_iterator c_it = c.cbegin();
-
+	/* 2, 5, 8 */
+	/* 7, 10, 12 */
+	/* 6, 9, 14 */
 	while (a_it != a.cend() && b_it != b.cend() && c_it != c.cend())
 	{
-		int max = std::max(*a_it, std::max(*b_it, *c_it));
-		int min = std::min(*a_it, std::min(*b_it, *c_it));
+		check = new Triplets(*a_it, *b_it, *c_it);
 
-		if (max - min < diff)
+		if (check->getDiff() < diff)
 		{
-			diff = max - min;
-			elem_a = *a_it; elem_b = *b_it; elem_c = *c_it;
+			diff = check->getDiff();
+			if (result)
+				delete result;
+			result = check;
 		}
 
 		if (diff == 0)
 			break; 
 
 		// to get closer to the smallest diff between element, up the smallest value
-		if (*a_it == min)
+		if (*a_it == check->m_third)
 			++a_it;
-		else if (*b_it == min)
+		else if (*b_it == check->m_third)
 			++b_it;
 		else
 			++c_it;
 	}
 
-	return std::vector<int>{elem_a, elem_b, elem_c};
+	return std::vector<int>{result->m_first, result->m_second, result->m_third};
 }
 
 /*
