@@ -167,6 +167,7 @@
     <ClInclude Include="Searching\SmallestElement.h" />
     <ClInclude Include="Searching\SortedArray.h" />
     <ClInclude Include="Searching\TournamentTree.h" />
+    <ClInclude Include="Sorting\SelectionSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,6 +19,9 @@
     <Filter Include="Header Files\Mathematical">
       <UniqueIdentifier>{d8778f82-ac4e-4d75-a800-85ecab243d03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Sorting">
+      <UniqueIdentifier>{28350bf3-6809-4fdd-8128-64bf0107999e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Geeks.cpp">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="Searching\ArrayString.h">
       <Filter>Header Files\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="Sorting\SelectionSort.h">
+      <Filter>Header Files\Sorting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
