@@ -83,5 +83,8 @@
     <ClInclude Include="Sorting\SelectionSort.h">
       <Filter>Header Files\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="Sorting\BubbleSort.h">
+      <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

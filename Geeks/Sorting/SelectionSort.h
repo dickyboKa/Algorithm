@@ -4,12 +4,12 @@
 /*
 Selection Sort: O(N^2);
 */
-void selectionSort(std::vector<int> &arr)
+void selectionSort(std::vector<int>::iterator beg, std::vector<int>::iterator end)
 {
-	for(auto it = arr.begin(); it != arr.end(); ++it)
+	for(auto it = beg; it != end; ++it)
 	{
 		auto temp_it = it;
-		for (auto m_it = it + 1; m_it != arr.cend(); ++m_it)
+		for (auto m_it = it + 1; m_it != end; ++m_it)
 		{
 			if (*m_it < *temp_it)
 				temp_it = m_it;
