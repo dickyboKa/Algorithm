@@ -92,5 +92,8 @@
     <ClInclude Include="Sorting\MergeSort.h">
       <Filter>Header Files\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="Sorting\QuickSort.h">
+      <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
