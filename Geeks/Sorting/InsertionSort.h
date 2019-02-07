@@ -17,3 +17,4 @@ void insertionSort(std::vector<int> &arr)
 		arr[j + 1] = key;
 	}
 }
+
