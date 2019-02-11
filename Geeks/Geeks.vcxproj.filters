@@ -98,5 +98,8 @@
     <ClInclude Include="Sorting\HeapSort.h">
       <Filter>Header Files\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="Sorting\CountSort.h">
+      <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
