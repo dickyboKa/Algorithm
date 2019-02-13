@@ -101,5 +101,8 @@
     <ClInclude Include="Sorting\CountSort.h">
       <Filter>Header Files\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="Sorting\RadixSort.h">
+      <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

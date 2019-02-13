@@ -173,6 +173,7 @@
     <ClInclude Include="Sorting\InsertionSort.h" />
     <ClInclude Include="Sorting\MergeSort.h" />
     <ClInclude Include="Sorting\QuickSort.h" />
+    <ClInclude Include="Sorting\RadixSort.h" />
     <ClInclude Include="Sorting\SelectionSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
