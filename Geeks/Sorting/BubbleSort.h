@@ -1,6 +1,7 @@
 #include <vector>
 
-void bubbleSort(std::vector<int>::iterator beg, std::vector<int>::iterator end)
+template <class ForwardIter>
+void bubbleSort(ForwardIter beg, ForwardIter end)
 {
 	while (true)
 	{
@@ -12,7 +13,7 @@ void bubbleSort(std::vector<int>::iterator beg, std::vector<int>::iterator end)
 			if (*it_b < *it_a)
 			{
 				swap = true;
-				int temp = *it_a;
+				auto temp = *it_a;
 				*it_a = *it_b;
 				*it_b = temp;
 			}

@@ -7,9 +7,10 @@
 /*
 Analysis of quiksort: average is nlogn
 */
-std::vector<int>::iterator partition(std::vector<int>::iterator low, std::vector<int>::iterator high)
+template <class ForwardIter>
+ForwardIter partition(ForwardIter low, ForwardIter high)
 {
-	int pivot = *high;
+	auto pivot = *high;
 	auto i = low;
 	for (auto j = low; j <= high - 1; ++j)
 	{
@@ -24,7 +25,8 @@ std::vector<int>::iterator partition(std::vector<int>::iterator low, std::vector
 	return i + 1;
 }
 
-void quickSort(std::vector<int>::iterator low, std::vector<int>::iterator high)
+template <class ForwardIter>
+void quickSort(ForwardIter low, ForwardIter high)
 {
 	--high; // high is cend() at the beginning;
 	if (low < high)
