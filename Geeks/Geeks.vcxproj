@@ -176,6 +176,7 @@
     <ClInclude Include="Sorting\RadixSort.h" />
     <ClInclude Include="Sorting\SelectionSort.h" />
     <ClInclude Include="Sorting\ShellSort.h" />
+    <ClInclude Include="Sorting\TimSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
