@@ -13,9 +13,7 @@ void bubbleSort(ForwardIter beg, ForwardIter end)
 			if (*it_b < *it_a)
 			{
 				swap = true;
-				auto temp = *it_a;
-				*it_a = *it_b;
-				*it_b = temp;
+				std::iter_swap(*it_b, *it_a);
 			}
 			++it_a;
 		}
