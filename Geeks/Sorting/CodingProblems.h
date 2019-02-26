@@ -59,3 +59,25 @@ std::pair<int, int> foundUnsortedArray(std::vector<int> &a)
 
 	return std::make_pair(left_index, right_index);
 }
+
+// check if array b is a subset of array a
+bool subsetArray(std::vector<int> a, std::vector<int> b)
+{
+	std::sort(a.begin(), a.end());
+	std::sort(b.begin(), b.end());
+
+	auto jt = b.cbegin();
+	bool subset = false;
+	for (auto it = a.cbegin(); it != a.cend(); ++it)
+	{
+		if (jt == b.cend())
+		{
+			subset = true;
+			break;
+		}
+
+		if (*it == *jt)
+			++jt;
+	}
+	return subset;
+}
