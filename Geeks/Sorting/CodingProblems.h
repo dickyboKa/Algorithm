@@ -27,3 +27,35 @@ void sortByFrequencey(std::vector<int> &a)
 		for (int i = it->second; i > 0; --i)
 			a.push_back(it->first);
 }
+
+// return index of unsorted array, left to righ
+std::pair<int, int> foundUnsortedArray(std::vector<int> &a)
+{
+	std::vector<int> temp = a;
+	std::sort(temp.begin(), temp.end());
+
+	int i = 0;
+	int j = a.size() - 1;
+	int left_index = i;
+	int right_index = j;
+	bool foundi = false;
+	bool foundj = false;
+	while (i < j)
+	{	 
+		if (temp[i] != a[i] && !foundi)
+		{
+			left_index = i;
+			foundi = true;
+		}
+		
+		if (temp[j] != a[j] && !foundj)
+		{
+			right_index = j;
+			foundj = true;
+		}
+		++i;
+		--j;
+	}
+
+	return std::make_pair(left_index, right_index);
+}
