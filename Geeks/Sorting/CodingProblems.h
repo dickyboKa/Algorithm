@@ -3,6 +3,7 @@
 #include <set>
 #include <map>
 #include <iostream>
+#include <queue>
 
 void sortByFrequencey(std::vector<int> &a)
 {
@@ -80,4 +81,20 @@ bool subsetArray(std::vector<int> a, std::vector<int> b)
 			++jt;
 	}
 	return subset;
+}
+
+// sort number with min heap
+void sortPriorityQueue(std::vector<int> &arr)
+{
+	std::priority_queue<int, std::vector<int>, std::greater<int>> pq;
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+		pq.push(*it);
+
+	arr.clear();
+	while (!pq.empty())
+	{
+		arr.push_back(pq.top());
+		pq.pop();
+	}
+
 }
