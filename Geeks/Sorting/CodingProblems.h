@@ -4,6 +4,7 @@
 #include <map>
 #include <iostream>
 #include <queue>
+#include <array>
 
 void sortByFrequencey(std::vector<int> &a)
 {
@@ -96,5 +97,42 @@ void sortPriorityQueue(std::vector<int> &arr)
 		arr.push_back(pq.top());
 		pq.pop();
 	}
+
+}
+
+// found number pair which have this rule x^y > y^x (x taken from array A, y taken from array B)
+void foundNumberPair(std::vector<int> a, std::vector<int> b)
+{
+	std::vector<std::pair<int, int>> result;
+	//if y > x then x^y > y^x with some exception;
+	std::array<std::array <int, 5>, 5> tableException =
+	{ {
+		{0, 0, 0, 0, 0},
+		{1, 0, 0, 0, 0},
+		{1, 1, 0, 0, 0},
+		{1, 1, 1, 0, 1},
+		{1, 1, 0, 0, 0},
+	} };
+
+	std::sort(a.begin(), a.end());
+	std::sort(b.begin(), b.end());
+
+	std::vector<std::pair<int, int>> indexOfResult;
+	for (int i = 0; i < a.size(); ++i)
+	{
+		auto it = std::upper_bound(b.begin(), b.end(), a[i]);
+		int index = it - b.begin();
+		if (!((a[i] < 5 && *it < 5) && !tableException[a[i]][*it]))
+			indexOfResult.push_back(std::make_pair(a[i], index));
+	}
+
+	for (auto it = indexOfResult.begin(); it != indexOfResult.end(); ++it)
+	{
+		for (int i = it->second; i < b.size(); ++i)
+			result.push_back(std::make_pair(it->first, b[i]));
+	}
+
+	for (auto it = result.begin(); it != result.end(); ++it)
+		std::cout << it->first << " " << it->second << std::endl;
 
 }
