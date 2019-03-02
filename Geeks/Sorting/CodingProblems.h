@@ -136,3 +136,64 @@ void foundNumberPair(std::vector<int> a, std::vector<int> b)
 		std::cout << it->first << " " << it->second << std::endl;
 
 }
+
+int countPairWithSumEqualTo(std::vector<int> &a, int k)
+{
+	std::set<int> mySet;
+	int count = 0;
+	for (auto it = a.cbegin(); it != a.cend(); ++it)
+	{
+		int check = (*it < k) ? (*it + k) : (*it - k);
+		auto found = mySet.find(check);
+		if (found != mySet.end())
+			++count;
+		mySet.insert(*it);
+	}
+	return count;
+}
+
+/*
+Sorting an array according to specific order from other array
+*/
+void sortSpecificOrder(std::vector<int> &tobeSorted, std::vector<int> &order)
+{
+	/*
+	first make a array that would count the value of ordered in tobeSorted
+	resize it to have at most biggest value on tobeSorted
+	*/
+	int max = 0;
+	for (auto it = tobeSorted.cbegin(); it != tobeSorted.cend(); ++it) // O(N);
+	{
+		if (*it > max)
+			max = *it;
+	}
+	std::vector<int> count(max + 1);
+
+	// populate the count
+	for (auto it = tobeSorted.cbegin(); it != tobeSorted.cend(); ++it) // O(N);
+		++count[*it];
+
+	tobeSorted.clear();
+
+	//tobeSorted according to order
+	for (auto it = order.cbegin(); it != order.cend(); ++it) // O(K)
+	{
+		// count is not 0 value available
+		while(count[*it] > 0) //O (M)
+		{
+			tobeSorted.push_back(*it);
+			--count[*it];
+		}
+	} // K * M
+
+	//put the rest that not on order, skip 0
+	for (int i = 1; i < count.size(); ++i) //N
+	{
+		if (count[i] > 0)
+		{
+			tobeSorted.push_back(i);
+			--count[i];
+		}
+	}
+	// total: O(3N + K*M) or lets just said O(N) with extra Space for count;
+}
