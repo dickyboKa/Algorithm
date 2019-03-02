@@ -197,3 +197,16 @@ void sortSpecificOrder(std::vector<int> &tobeSorted, std::vector<int> &order)
 	}
 	// total: O(3N + K*M) or lets just said O(N) with extra Space for count;
 }
+
+void sortInWave(std::vector<int> &a)
+{
+	int N = a.size();
+	for (int i = 0; i < N; i+=2)
+	{
+		if (i > 0 && a[i] < a[i - 1])
+			std::swap(a[i], a[i - 1]);
+
+		if (i < N - 1 && a[i] < a[i + 1])
+			std::swap(a[i], a[i + 1]);
+	}
+}
