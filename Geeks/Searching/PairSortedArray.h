@@ -19,7 +19,7 @@ std::pair<int, int> findThePairByTheSum(std::vector<int> &A, int x)
 			b = *r_it;
 			diff = abs(*l_it + *r_it - x);
 		}
-		else if ((*l_it + *r_it) < x)
+		if ((*l_it + *r_it) < x)
 			++l_it;
 		else
 			--r_it;
