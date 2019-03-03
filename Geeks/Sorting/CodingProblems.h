@@ -5,6 +5,7 @@
 #include <iostream>
 #include <queue>
 #include <array>
+#include <regex>
 
 void sortByFrequencey(std::vector<int> &a)
 {
@@ -301,7 +302,45 @@ void findMaxGuestInParty(std::vector<int> &arival, std::vector<int> &departure)
 	std::cout << "The maximum guest in party is: " << max_guest << " at time: " << time;
 }
 
+class myDate
+{
+public:
+	myDate(int d, int m, int y) : day(d), month(m), year(y) 
+	{
+		// this is totally flaw, but my goal is learn regrex, so ?
+		int yearToDay = y * 365;
+		int monthToDay = m * 30;
+		totalTimeInDay = yearToDay + monthToDay + day;
+ 	}
+	int day;
+	int month;
+	int year;
+	int totalTimeInDay;
+};
 
+void sortDate(std::vector<std::string> &dates)
+{
+	std::vector<myDate> myDates;
+	for (auto it = dates.cbegin(); it != dates.cend(); ++it)
+	{
+		std::regex e("(^\\d{1,2})-(\\d{1,2})-(\\d{4})");
+		std::smatch sm;
+		std::regex_match(*it, sm, e);
+		int day = std::stoi(sm[1]);
+		int month = std::stoi(sm[2]);
+		int year = std::stoi(sm[3]);
+		myDates.push_back(myDate(day, month, year));
+	}
+	
+	std::sort(myDates.begin(), myDates.end(), [](myDate a, myDate b) {
+		return a.totalTimeInDay < b.totalTimeInDay;
+	});
+
+	for (auto it = myDates.cbegin(); it != myDates.cend(); ++it)
+	{
+		std::cout << it->day << "-" << it->month << "-" << it->year << std::endl;
+	}
+}
 
 
 
