@@ -238,3 +238,48 @@ void findOverlapInterval(std::vector<std::pair<int, int>> &set)
 	else
 		std::cout << "No pair of interval overlap" << std::endl;
 }
+
+
+void almostSort(std::vector<int> &arr)
+{
+	int i = 0;
+	int j = 1;
+	int m = arr.size() - 1;
+	int k = m - 1;
+	int a = 0;
+	int b = 0;
+
+
+	while (i < m)
+	{
+		if (arr[i] > arr[j])
+			a = (a == 0) ? i : a;
+
+		if (arr[m] < arr[k])
+			b = (b == 0) ? m : b;
+		++i; ++j;
+		--k, --m;
+	}
+
+	if (a != 0 && b != 0)
+		std::swap(arr[a], arr[b]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
