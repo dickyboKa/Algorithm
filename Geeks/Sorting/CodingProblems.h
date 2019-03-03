@@ -342,6 +342,20 @@ void sortDate(std::vector<std::string> &dates)
 	}
 }
 
+void maximumProductOfTriplet(std::vector<int> &arr)
+{
+	if (arr.size() < 3)
+		return; // can do if array is not 3 or more.
+	// first we sorted:
+	std::sort(arr.begin(), arr.end());
+
+	// then we consider some options base on is there a negative value or not
+	int n = arr.size() - 1;
+	int first_product = arr[n] * arr[n - 1] * arr[n - 2];
+	int second_product = arr[0] * arr[1] * arr[n];
+	int max_product = (first_product > second_product) ? first_product : second_product;
+	std::cout << max_product << std::endl;
+}
 
 
 
