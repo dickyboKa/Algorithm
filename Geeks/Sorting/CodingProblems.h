@@ -210,3 +210,31 @@ void sortInWave(std::vector<int> &a)
 			std::swap(a[i], a[i + 1]);
 	}
 }
+
+// finding an interval value that overlap
+void findOverlapInterval(std::vector<std::pair<int, int>> &set)
+{
+	std::vector<std::pair<int, int>> overlaps;
+	std::sort(set.begin(), set.end()); // O(nlogn)
+	
+	auto it = set.cbegin();
+	auto jt = it + 1;
+	while (jt != set.cend()) // O (N/2)
+	{
+		if (it->second > jt->first)
+		{
+			overlaps.push_back(std::make_pair(it->first, it->second));
+			overlaps.push_back(std::make_pair(jt->first, jt->second));
+		}
+		++it;
+		++jt;
+	}
+
+	if (!overlaps.empty())
+	{
+		for (auto it = overlaps.cbegin(); it != overlaps.cend(); ++it)
+			std::cout << it->first << " " << it->second << std::endl;
+	}
+	else
+		std::cout << "No pair of interval overlap" << std::endl;
+}
