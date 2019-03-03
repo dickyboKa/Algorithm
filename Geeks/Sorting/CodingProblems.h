@@ -266,7 +266,40 @@ void almostSort(std::vector<int> &arr)
 }
 
 
+void findMaxGuestInParty(std::vector<int> &arival, std::vector<int> &departure)
+{
+	// sort the arival and departure
+	std::sort(arival.begin(), arival.end());
+	std::sort(departure.begin(), departure.end());
 
+	int guest = 0;
+	int max_guest = 0;
+	int i = 0;
+	int j = 0;
+	int time = arival[0];
+
+	// we loop on both array, take a note what even is occure, either people come in or people going
+	while (i < arival.size() & j < departure.size())
+	{
+		if (arival[i] <= departure[j]) //people come in
+		{
+			++guest;
+			if (guest > max_guest)
+			{
+				max_guest = guest;
+				time = arival[i]; //update time when max even occured
+			}
+			++i; // increment even
+		}
+		else // people going
+		{
+			--guest;
+			++j; // incremenet even
+		}
+	}
+
+	std::cout << "The maximum guest in party is: " << max_guest << " at time: " << time;
+}
 
 
 
