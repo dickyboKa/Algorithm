@@ -382,10 +382,41 @@ void findMissingElement(std::vector<int> &arr, int low, int high)
 }
 
 
+/*
+Find Minimum Sum formed from all number on array
+*/
+void minimumSumArray(std::vector<int> &arr)
+{
+	std::sort(arr.begin(), arr.end(), std::greater<int>());
+	int a = 0;
+	int b = 0;
+	bool fill_a, fill_b;
+	fill_a = true;
+	int delim = 1;
+	// fill the lest significant digit 
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+	{
+		if (fill_a)
+		{
+			a = a + ((*it) * delim);
+			fill_a = false;
+			fill_b = true;
+		}
+		else if (fill_b)
+		{
+			b = b + ((*it) * delim);
+			fill_b = false;
+			fill_a = true;
+		}
 
+		if(fill_a)
+			delim = delim * 10;
+	}
 
+	std::cout << a << " " << b << std::endl;
+	std::cout << "minimum sum: " << a + b << std::endl;
 
-
+}
 
 
 
