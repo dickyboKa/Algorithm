@@ -357,6 +357,30 @@ void maximumProductOfTriplet(std::vector<int> &arr)
 	std::cout << max_product << std::endl;
 }
 
+//find missing element on array from low to high given as parameter
+void findMissingElement(std::vector<int> &arr, int low, int high)
+{
+
+	std::sort(arr.begin(), arr.end());
+	std::vector<int>::iterator it = std::lower_bound(arr.begin(), arr.end(), low);
+	while(low < high && it != arr.end())
+	{
+		if (low != *it)
+			std::cout << low << " ";
+		else
+			++it;
+
+		++low;
+	}
+
+	// print the rest of it if any ?
+	while (low < high)
+	{
+		std::cout << low << " ";
+		++low;
+	}
+}
+
 
 
 
