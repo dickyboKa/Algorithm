@@ -420,7 +420,19 @@ void minimumSumArray(std::vector<int> &arr)
 
 
 
+void findMinimumDiff(std::vector<int> &arr)
+{
+	std::sort(arr.begin(), arr.end());
+	int diff = std::numeric_limits<int>::max();
 
+	for (int i = 0; i < arr.size() - 1; ++i)
+	{
+		if ((arr[i + 1] - arr[i]) < diff)
+			diff = arr[i + 1] = arr[i];
+	}
+
+	std::cout << diff;
+}
 
 
 
