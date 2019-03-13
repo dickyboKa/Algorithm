@@ -168,6 +168,7 @@
     <ClInclude Include="Searching\SortedArray.h" />
     <ClInclude Include="Searching\TournamentTree.h" />
     <ClInclude Include="Sorting\BubbleSort.h" />
+    <ClInclude Include="Sorting\CodingProblems.h" />
     <ClInclude Include="Sorting\CombSort.h" />
     <ClInclude Include="Sorting\CountSort.h" />
     <ClInclude Include="Sorting\HeapSort.h" />

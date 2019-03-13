@@ -113,5 +113,8 @@
     <ClInclude Include="Sorting\CombSort.h">
       <Filter>Header Files\Sorting</Filter>
     </ClInclude>
+    <ClInclude Include="Sorting\CodingProblems.h">
+      <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@
 #include <queue>
 #include <array>
 #include <regex>
+#include <unordered_map>
 
 void sortByFrequencey(std::vector<int> &a)
 {
@@ -434,5 +435,25 @@ void findMinimumDiff(std::vector<int> &arr)
 	std::cout << diff;
 }
 
+void collectionsInReduceForm(std::vector<int> &collections)
+{
+	std::vector<int> sortCopyCollections(collections);
+	std::sort(sortCopyCollections.begin(), sortCopyCollections.end());
+
+	// this will concise of original value pair with reduce form value e.g: 10 with 0;
+	std::unordered_map<int, int> pairOriginalReduce;
+
+	int reduceValue = 0;
+	for (auto it = sortCopyCollections.cbegin(); it != sortCopyCollections.cend(); ++it)
+		pairOriginalReduce[*it] = reduceValue++;
+
+	// change the original collections to reduce form
+	for (auto it = collections.begin(); it != collections.end(); ++it)
+		*it = pairOriginalReduce[*it];
+
+	// print the collections
+	for (auto it = collections.cbegin(); it != collections.cend(); ++it)
+		std::cout << *it << " ";
+}
 
 
