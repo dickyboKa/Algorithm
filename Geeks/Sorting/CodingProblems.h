@@ -549,4 +549,29 @@ std::vector<int> surpasserCount(std::vector<int> &collections)
 	return supressions;
 }
 
+// utility function t count bits
+int countBit(int input)
+{
+	int count = 0;
+	while (input)
+	{
+		if (input & 1) //if last bits is one;
+			count += 1;
+		input = input >> 1; //shift to the right;
+	}
+	return count;
+}
 
+void sortByBitCount(std::vector<int> &collections)
+{
+	std::vector<std::pair<int, int>> bitsCount;
+	for (auto it = collections.cbegin(); it != collections.cend(); ++it)
+		bitsCount.push_back(std::make_pair(*it, countBit(*it)));
+
+	std::sort(bitsCount.begin(), bitsCount.end(), [](std::pair<int, int> a, std::pair<int, int> b) {
+		return a.second > b.second;
+	});
+
+	for (auto it = bitsCount.cbegin(); it != bitsCount.cend(); ++it)
+		std::cout << it->first << " ";
+}
