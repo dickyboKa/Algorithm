@@ -437,14 +437,14 @@ void findMinimumDiff(std::vector<int> &arr)
 
 void collectionsInReduceForm(std::vector<int> &collections)
 {
-	std::vector<int> sortCopyCollections(collections);
-	std::sort(sortCopyCollections.begin(), sortCopyCollections.end());
+	std::vector<int> collectionsSorted(collections);
+	std::sort(collectionsSorted.begin(), collectionsSorted.end());
 
 	// this will concise of original value pair with reduce form value e.g: 10 with 0;
 	std::unordered_map<int, int> pairOriginalReduce;
 
 	int reduceValue = 0;
-	for (auto it = sortCopyCollections.cbegin(); it != sortCopyCollections.cend(); ++it)
+	for (auto it = collectionsSorted.cbegin(); it != collectionsSorted.cend(); ++it)
 		pairOriginalReduce[*it] = reduceValue++;
 
 	// change the original collections to reduce form
@@ -454,6 +454,99 @@ void collectionsInReduceForm(std::vector<int> &collections)
 	// print the collections
 	for (auto it = collections.cbegin(); it != collections.cend(); ++it)
 		std::cout << *it << " ";
+}
+
+int _merge(std::vector<int> &collection, std::vector<int> &temp, int leftIndex, int midIndex, 
+	int rightIndex, std::unordered_map<int, int> &inversions)
+{
+	int leftSubarrayIndex = leftIndex;
+	int rightSubarrayIndex = midIndex;
+	int populateIndex = leftIndex;
+	int inverseCount = 0;
+	int inverse = 0;
+
+	while ((leftSubarrayIndex <= midIndex - 1) && (rightSubarrayIndex <= rightIndex))
+	{
+		if (collection[leftSubarrayIndex] <= collection[rightSubarrayIndex])
+		{
+			inversions[collection[leftSubarrayIndex]] += inverse;
+			temp[populateIndex++] = collection[leftSubarrayIndex++];
+		}
+		else
+		{
+			temp[populateIndex++] = collection[rightSubarrayIndex++];
+			inverseCount = inverseCount + (midIndex - leftSubarrayIndex);
+			++inverse;
+		}
+	}
+
+	//populate the rest
+	/* Copy the remaining elements of left subarray
+	   (if there are any) to temp*/
+	while (leftSubarrayIndex <= midIndex - 1)
+	{
+		inversions[collection[leftSubarrayIndex]] += inverse;
+		temp[populateIndex++] = collection[leftSubarrayIndex++];
+	}
+	/* Copy the remaining elements of right subarray
+   (if there are any) to temp*/
+	while (rightSubarrayIndex <= rightIndex)
+		temp[populateIndex++] = collection[rightSubarrayIndex++];
+
+	/*Copy back the merged elements to original array*/
+	for (leftSubarrayIndex = leftIndex; leftSubarrayIndex <= rightIndex; leftSubarrayIndex++)
+		collection[leftSubarrayIndex] = temp[leftSubarrayIndex];
+
+	return inverseCount;
+}
+
+int mergeSort(std::vector<int> &collection, std::vector<int> &temp, int leftIndex, 
+	int rightIndex, std::unordered_map<int, int> &inversions)
+{
+	int midIndex = 0;
+	int inverseCount = 0;
+
+	if (rightIndex > leftIndex)
+	{
+		midIndex = (rightIndex + leftIndex) / 2;
+
+		// divide and found the smallest array to conquer with recrusion
+		inverseCount = mergeSort(collection, temp, leftIndex, midIndex, inversions);
+		inverseCount += mergeSort(collection, temp, midIndex + 1, rightIndex, inversions);
+
+		//now merge the two part array recrusively
+		inverseCount += _merge(collection, temp, leftIndex, midIndex + 1, rightIndex, inversions);
+	}
+
+	return inverseCount;
+}
+
+int countInversion(std::vector<int> &collections)
+{
+	std::unordered_map<int, int> inversions;
+	std::vector<int> copyCollections(collections);
+	std::vector<int> temp(collections.size());
+	return mergeSort(copyCollections, temp, 0, copyCollections.size() - 1, inversions);
+}
+
+
+std::vector<int> surpasserCount(std::vector<int> &collections)
+{
+	std::unordered_map<int, int> inversions;
+	std::vector<int> supressions;
+	std::vector<int> copyCollections(collections);
+	std::vector<int> temp(collections.size());
+	mergeSort(copyCollections, temp, 0, copyCollections.size() - 1, inversions);
+
+	for (int i = 0; i < collections.size(); ++i)
+	{
+		supressions.push_back((collections.size() - 1) - i - inversions[collections[i]]);
+	}
+
+	for (auto it = supressions.cbegin(); it != supressions.cend(); ++it)
+		std::cout << *it << " ";
+
+	return supressions;
 }
 
 
