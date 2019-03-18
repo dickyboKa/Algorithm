@@ -590,3 +590,21 @@ int countConsecutiveNumberSubset(std::vector<int> collections)
 	return subsetCount + 1; //there always last set not being count;
 }
 ///////////////
+
+/* sum-elements-k1th-k2th-smallest-elements*/
+//////////////////
+int sumBetweenRange(std::vector<int> collections, int left, int right)
+{
+	std::sort(collections.begin(), collections.end());
+
+	// sum subsequence number between [leftindex - rightindex];
+	int leftIndex = left - 1;
+	int rightIndex = right - 1;
+	int sum = 0;
+	for (int i = leftIndex + 1; i < rightIndex; ++i)
+		sum += collections[i];
+
+	return sum;
+}
+
+/////////////////
