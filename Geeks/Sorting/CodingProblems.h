@@ -575,3 +575,18 @@ void sortByBitCount(std::vector<int> &collections)
 	for (auto it = bitsCount.cbegin(); it != bitsCount.cend(); ++it)
 		std::cout << it->first << " ";
 }
+
+/*count-minimum-number-subsets-subsequences-consecutive-numbers*/
+////////////////
+int countConsecutiveNumberSubset(std::vector<int> collections)
+{
+	std::sort(collections.begin(), collections.end());
+	int subsetCount = 0;
+	for (int i = 1; i < collections.size(); ++i)
+	{
+		if (collections[i] - collections[i - 1] > 1) // gap bigger than 1
+			++subsetCount; // sequence end, count subset
+	}
+	return subsetCount + 1; //there always last set not being count;
+}
+///////////////
