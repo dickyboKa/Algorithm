@@ -608,3 +608,108 @@ int sumBetweenRange(std::vector<int> collections, int left, int right)
 }
 
 /////////////////
+
+//utilites
+void print(std::vector<std::vector<int>> &arr)
+{
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+	{
+		for (auto jt = it->cbegin(); jt != it->cend(); ++jt)
+			std::cout << *jt << " ";
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+
+// backtracking found every possible subset or in match combination
+void print(std::vector<int> &arr)
+{
+	for (auto it = arr.cbegin(); it != arr.cend(); ++it)
+		std::cout << *it << " ";
+	std::cout << std::endl;
+}
+
+void combinationUtil(std::vector<int> &data, std::vector<int> &subset,
+	int start, int end, int subsetSize)
+{
+	if (subset.size() == subsetSize)
+	{
+		// change this function to change what you want to do with the subset founded
+		print(subset);
+		//
+		subset.erase(subset.end() - 1);
+		return;
+	}
+	for (int i = start; i <= end; i++)
+	{
+		subset.push_back(data[i]);
+		combinationUtil(data, subset, i + 1, end, subsetSize);
+	}
+	if (!subset.empty())
+		subset.erase(subset.end() - 1);
+}
+
+void combination(std::vector<int> &data, int subSetSize)
+{
+	std::vector<int> subset; // this will hold temporary subset
+	std::vector<int> sortedData(data);
+	std::sort(data.begin(), data.end()); //sorted data is the best data
+	combinationUtil(data, subset, 0, data.size() - 1, subSetSize);
+}
+
+////////////////////////////////////////////
+// Sort an array according to absolute difference with given value
+void sortArraybyDiff(std::vector<int> &collections, int diffWith)
+{
+	std::sort(collections.begin(), collections.end(), [diffWith](int a, int b) {
+		return abs(a - diffWith) < abs(b - diffWith);
+	});
+}
+
+// Complete the divisibleSumPairs function below.
+int pairWithSumEqualTo(std::vector<int> &A, int x)
+{
+	int countPairs = 0;
+	int left = 0;
+	int right = A.size() - 1;
+	while (left < right)
+	{
+		if (A[left] + A[right] == x)
+		{
+			std::cout << A[left] << " " << A[right] << std::endl;
+			countPairs++;
+		}
+
+		if (A[left] + A[right] < x)
+			++left;
+		else
+			--right;
+	}
+
+	return countPairs;
+}
+
+int divisibleSumPairs(int n, int k, std::vector<int> &collections)
+{
+	
+	std::vector<int> subSetCounts(k);
+
+	for (auto it = collections.cbegin(); it != collections.cend(); ++it)
+		subSetCounts[*it % k]++;
+
+	int countPairs = (subSetCounts[0] * (subSetCounts[0] - 1)) / 2;
+	int left = 1;
+	int right = k - 1;
+
+	while (left < right)
+	{
+		countPairs += subSetCounts[left] * subSetCounts[right];
+		++left;
+		--right;
+	}
+
+	if (k % 2 == 0) // special case for even K
+		countPairs += (subSetCounts[k / 2] * (subSetCounts[k / 2] - 1)) / 2;
+	return countPairs;
+}
+
