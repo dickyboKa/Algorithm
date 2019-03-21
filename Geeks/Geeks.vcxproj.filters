@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Sorting">
       <UniqueIdentifier>{28350bf3-6809-4fdd-8128-64bf0107999e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Graph">
+      <UniqueIdentifier>{756ba462-56ce-407c-ab0d-12a32d5ca8fc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Geeks.cpp">
@@ -115,6 +118,12 @@
     </ClInclude>
     <ClInclude Include="Sorting\CodingProblems.h">
       <Filter>Header Files\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph\GraphMatrix.h">
+      <Filter>Header Files\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph\GraphList.h">
+      <Filter>Header Files\Graph</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
