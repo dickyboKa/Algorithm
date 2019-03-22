@@ -36,7 +36,11 @@ public:
 
 	auto cend(int vertex) { return graph[vertex].cend(); }
 
+	std::vector<int> breadthFirstSearch(int vectorStart);
+	std::vector<int> depthFirstSearch(int vectorStart = 0);
 private:
+	void depthFirstSearchUtil(int vertex, std::vector<bool> &visited, std::vector<int> &path);
+
 	int vertices;
 	bool directed;
 	std::vector<std::vector<int>> graph;
@@ -44,9 +48,9 @@ private:
 
 
 // return a path that exist
-std::vector<int> breadthFirstSearch(GraphList &graph, int vectorStart)
+std::vector<int> GraphList::breadthFirstSearch(int vectorStart)
 {
-	std::vector<bool> visited(graph.getVertices());
+	std::vector<bool> visited(vertices);
 
 	std::list<int> queueToCheck;
 	// mark start to visited, because we about to visit start
@@ -63,7 +67,7 @@ std::vector<int> breadthFirstSearch(GraphList &graph, int vectorStart)
 		path.push_back(vertex);
 		queueToCheck.pop_front(); 
 
-		for (auto it = graph.cbegin(vertex); it != graph.cend(vertex); ++it)
+		for (auto it = graph[vertex].cbegin(); it != graph[vertex].cend(); ++it)
 		{
 			if (!visited[*it])
 			{
@@ -74,4 +78,38 @@ std::vector<int> breadthFirstSearch(GraphList &graph, int vectorStart)
 	}
 
 	return path;
+}
+
+
+std::vector<int> GraphList::depthFirstSearch(int start)
+{
+	std::vector<bool> visited(vertices);
+	std::vector<int> path;
+
+	if(start != 0)
+		depthFirstSearchUtil(start, visited, path);
+	else
+	{	// if start is not specified we have to traverse every vertex usefull for disconected graph
+		for (int i = 0; i < vertices; ++i)
+		{
+			if(!visited[i])
+				depthFirstSearchUtil(i, visited, path);
+		}
+	}
+	return path;
+}
+
+void GraphList::depthFirstSearchUtil(int vertex, std::vector<bool> &visited, std::vector<int> &path)
+{
+	visited[vertex] = true;
+	path.push_back(vertex);
+
+	for (auto it = graph[vertex].cbegin(); it != graph[vertex].cend(); ++it)
+	{
+		if (!visited[*it])
+		{
+			visited[*it];
+			depthFirstSearchUtil(*it, visited, path);
+		}
+	}
 }
