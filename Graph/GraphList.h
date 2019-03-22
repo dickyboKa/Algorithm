@@ -2,7 +2,6 @@
 #include <list>
 #include <iostream>
 #include <iterator>
-
 //using vector better cache
 class GraphList
 {

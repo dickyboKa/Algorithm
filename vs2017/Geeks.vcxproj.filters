@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Algorithm\Graph">
+      <UniqueIdentifier>{654e3b0c-db4a-4f16-9544-eb5185caff05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Algorithm\Mathematical">
+      <UniqueIdentifier>{14d455cf-2237-4407-872f-f31a50f89625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm\Searching">
+      <UniqueIdentifier>{7454f0d4-b66a-49dd-9d2b-2677b382cbcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm\Sorting">
+      <UniqueIdentifier>{4555b23e-9750-4bae-abb2-0ee73c0e2b27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Geeks.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Searching\TournamentTree.cpp">
+      <Filter>Algorithm\Searching</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Graph\GraphList.h">
+      <Filter>Algorithm\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\GraphMatrix.h">
+      <Filter>Algorithm\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mathematical\Combinations.h">
+      <Filter>Algorithm\Mathematical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mathematical\Utilities.h">
+      <Filter>Algorithm\Mathematical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\ArrayString.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\BinarySearch.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\ClosestElement.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\CommonElement.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\CountOne.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\LargestElement.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\PairSortedArray.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\Queries.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\RationalArray.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\RepeatedElement.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\RotateArray.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\SearchElement.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\SmallestElement.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\SortedArray.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\TournamentTree.h">
+      <Filter>Algorithm\Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\BubbleSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\CodingProblems.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\CombSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\CountSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\HeapSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\InsertionSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\MergeSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\QuickSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\RadixSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\SelectionSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\ShellSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\TimSort.h">
+      <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

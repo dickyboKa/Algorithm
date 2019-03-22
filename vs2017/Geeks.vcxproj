@@ -147,40 +147,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Geeks.cpp" />
-    <ClCompile Include="Searching\TournamentTree.cpp" />
+    <ClCompile Include="..\Geeks.cpp" />
+    <ClCompile Include="..\Searching\TournamentTree.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graph\GraphList.h" />
-    <ClInclude Include="Graph\GraphMatrix.h" />
-    <ClInclude Include="Mathematical\Combinations.h" />
-    <ClInclude Include="Searching\ArrayString.h" />
-    <ClInclude Include="Searching\BinarySearch.h" />
-    <ClInclude Include="Searching\ClosestElement.h" />
-    <ClInclude Include="Searching\CommonElement.h" />
-    <ClInclude Include="Searching\CountOne.h" />
-    <ClInclude Include="Searching\LargestElement.h" />
-    <ClInclude Include="Searching\PairSortedArray.h" />
-    <ClInclude Include="Searching\Queries.h" />
-    <ClInclude Include="Searching\RationalArray.h" />
-    <ClInclude Include="Searching\RepeatedElement.h" />
-    <ClInclude Include="Searching\RotateArray.h" />
-    <ClInclude Include="Searching\SearchElement.h" />
-    <ClInclude Include="Searching\SmallestElement.h" />
-    <ClInclude Include="Searching\SortedArray.h" />
-    <ClInclude Include="Searching\TournamentTree.h" />
-    <ClInclude Include="Sorting\BubbleSort.h" />
-    <ClInclude Include="Sorting\CodingProblems.h" />
-    <ClInclude Include="Sorting\CombSort.h" />
-    <ClInclude Include="Sorting\CountSort.h" />
-    <ClInclude Include="Sorting\HeapSort.h" />
-    <ClInclude Include="Sorting\InsertionSort.h" />
-    <ClInclude Include="Sorting\MergeSort.h" />
-    <ClInclude Include="Sorting\QuickSort.h" />
-    <ClInclude Include="Sorting\RadixSort.h" />
-    <ClInclude Include="Sorting\SelectionSort.h" />
-    <ClInclude Include="Sorting\ShellSort.h" />
-    <ClInclude Include="Sorting\TimSort.h" />
+    <ClInclude Include="..\Graph\GraphList.h" />
+    <ClInclude Include="..\Graph\GraphMatrix.h" />
+    <ClInclude Include="..\Mathematical\Combinations.h" />
+    <ClInclude Include="..\Mathematical\Utilities.h" />
+    <ClInclude Include="..\Searching\ArrayString.h" />
+    <ClInclude Include="..\Searching\BinarySearch.h" />
+    <ClInclude Include="..\Searching\ClosestElement.h" />
+    <ClInclude Include="..\Searching\CommonElement.h" />
+    <ClInclude Include="..\Searching\CountOne.h" />
+    <ClInclude Include="..\Searching\LargestElement.h" />
+    <ClInclude Include="..\Searching\PairSortedArray.h" />
+    <ClInclude Include="..\Searching\Queries.h" />
+    <ClInclude Include="..\Searching\RationalArray.h" />
+    <ClInclude Include="..\Searching\RepeatedElement.h" />
+    <ClInclude Include="..\Searching\RotateArray.h" />
+    <ClInclude Include="..\Searching\SearchElement.h" />
+    <ClInclude Include="..\Searching\SmallestElement.h" />
+    <ClInclude Include="..\Searching\SortedArray.h" />
+    <ClInclude Include="..\Searching\TournamentTree.h" />
+    <ClInclude Include="..\Sorting\BubbleSort.h" />
+    <ClInclude Include="..\Sorting\CodingProblems.h" />
+    <ClInclude Include="..\Sorting\CombSort.h" />
+    <ClInclude Include="..\Sorting\CountSort.h" />
+    <ClInclude Include="..\Sorting\HeapSort.h" />
+    <ClInclude Include="..\Sorting\InsertionSort.h" />
+    <ClInclude Include="..\Sorting\MergeSort.h" />
+    <ClInclude Include="..\Sorting\QuickSort.h" />
+    <ClInclude Include="..\Sorting\RadixSort.h" />
+    <ClInclude Include="..\Sorting\SelectionSort.h" />
+    <ClInclude Include="..\Sorting\ShellSort.h" />
+    <ClInclude Include="..\Sorting\TimSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
