@@ -1,1 +1,1 @@
-My Collection of Algorihtm Study
+My Collections of Algorihtm Study
