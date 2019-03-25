@@ -25,6 +25,9 @@
     <Filter Include="Algorithm\Sorting">
       <UniqueIdentifier>{4555b23e-9750-4bae-abb2-0ee73c0e2b27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm\Greedy">
+      <UniqueIdentifier>{868657ee-93e8-4525-ba27-46fd943be7fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp">
@@ -130,6 +133,9 @@
     </ClInclude>
     <ClInclude Include="..\Sorting\TimSort.h">
       <Filter>Algorithm\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Greedy\CodingProblem.h">
+      <Filter>Algorithm\Greedy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
