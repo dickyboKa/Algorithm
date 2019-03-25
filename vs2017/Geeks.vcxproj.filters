@@ -33,6 +33,9 @@
     <ClCompile Include="..\Searching\TournamentTree.cpp">
       <Filter>Algorithm\Searching</Filter>
     </ClCompile>
+    <ClCompile Include="..\Graph\GraphList.cpp">
+      <Filter>Algorithm\Graph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Graph\GraphList.h">

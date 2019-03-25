@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp" />
+    <ClCompile Include="..\Graph\GraphList.cpp" />
     <ClCompile Include="..\Searching\TournamentTree.cpp" />
   </ItemGroup>
   <ItemGroup>
