@@ -137,5 +137,8 @@
     <ClInclude Include="..\Greedy\CodingProblem.h">
       <Filter>Algorithm\Greedy</Filter>
     </ClInclude>
+    <ClInclude Include="..\Graph\CodingProblem.h">
+      <Filter>Algorithm\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

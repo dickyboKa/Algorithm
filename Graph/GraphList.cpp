@@ -1,3 +1,4 @@
+#pragma once
 #include "GraphList.h"
 
 void GraphList::addEdge(int u, int v)
@@ -102,21 +103,4 @@ void GraphList::depthFirstSearchUtil(int currentVertextTraverse, std::vector<boo
 			depthFirstSearchUtil(*it_vertices, visited, path);
 		}
 	}
-}
-
-int GraphList::findMother()
-{
-	auto path = depthFirstSearchAllVertex();
-	int v = path.back();
-
-	// if every vertex reachable from v than v is mother, if not no mother exist in this graph
-	std::vector<bool> visited(vertices);
-	path.clear();
-	depthFirstSearchUtil(v, visited, path);
-	for (auto it_visited = visited.cbegin(); it_visited != visited.cend(); ++it_visited)
-	{
-		if (*it_visited == false)
-			return -1;
-	}
-	return 0;
 }
