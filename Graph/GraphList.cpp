@@ -13,8 +13,7 @@ void GraphList::print()
 {
 	for (int v = 0; v < graph.size(); ++v)
 	{
-		std::cout << std::endl << "Adjacency list of vertex "
-			<< v << std::endl << "head ";
+		std::cout << std::endl << "[" << v << "]";
 		for (auto x : graph[v])
 			std::cout << "->" << x;
 		std::cout << std::endl;

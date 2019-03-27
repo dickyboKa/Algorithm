@@ -41,3 +41,68 @@ void transitiveClosure(GraphList &g)
 
 	tc.print();
 }
+
+// Find k-cores of an undirected graph
+// Given a graph G and an integer K, K-cores of the graph are connected components 
+// that are left after all vertices of degree less than k have been removed
+bool dfsUtil(GraphList &g, std::vector<bool> &visited, int v, int minDegree, std::vector<int> &vDegrees)
+{
+	visited[v] = true;
+	for (auto it = g.cbegin(v); it != g.cend(v); ++it)
+	{
+		if (vDegrees[v] < minDegree)
+			vDegrees[*it]--;
+
+		if (!visited[*it])
+		{
+			if (dfsUtil(g, visited, *it, minDegree, vDegrees))
+				vDegrees[v]--;
+		}
+
+	}
+	return vDegrees[v] < minDegree;
+}
+
+int findVertexWithMinimumDegree(GraphList &g, std::vector<int> &vDegrees)
+{
+	int minDegree = std::numeric_limits<int>::max();
+	int startVertex = 0;
+	for (int i = 0; i < g.getVertices(); ++i)
+	{
+		vDegrees[i] = g.getDegree(i);
+		if (g.getDegree(i) < minDegree)
+			startVertex = i;
+	}
+
+	return startVertex;
+}
+
+void transformGraphToSpecificDegree(GraphList &g, int degree)
+{
+	GraphList tg(g);
+	std::vector<int> vDegrees(g.getVertices(), 0);
+	std::vector<bool> visited(g.getVertices(), false);
+	int startVertex = findVertexWithMinimumDegree(g, vDegrees);
+	dfsUtil(g, visited, startVertex, degree, vDegrees);
+
+	for (int i = 0; i < g.getVertices(); ++i)
+	{
+		if (!visited[i])
+			dfsUtil(g, visited, i, degree, vDegrees);
+	}
+
+	for (int v = 0; v < g.getVertices(); v++)
+	{
+		if (vDegrees[v] >= degree)
+		{
+			std::cout << "\n[" << v << "]";
+
+			// Traverse adjacency list of v and print only 
+			// those adjacent which have vDegree >= k after 
+			// BFS. 
+			for (auto it = g.cbegin(v); it != g.cend(v); ++it)
+				if (vDegrees[*it] >= degree)
+					std::cout << " -> " << *it;
+		}
+	}
+}
