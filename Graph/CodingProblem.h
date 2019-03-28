@@ -1,6 +1,7 @@
 #pragma once
 #include "GraphList.h"
 #include "GraphMatrix.h"
+#include <stack>
 
 // a mother vertex: is a vertex v such that all other vertices in G can be reached by a path from v.
 int findMother(GraphList &g)
@@ -179,4 +180,39 @@ bool isUndirectedGraphHasCycle(GraphList &g)
 		}
 	}
 	return cycleCount > 0;
+}
+
+
+// Topological Sort
+void topologicalSortUtil(GraphList &g, int v, std::stack<int> &queue, std::vector<bool> &visited)
+{
+	visited[v] = true;
+
+	for (auto adj_vertex = g.cbegin(v); adj_vertex != g.cend(v); ++adj_vertex)
+	{
+		if (!visited[*adj_vertex])
+			topologicalSortUtil(g, *adj_vertex, queue, visited);
+	}
+
+	queue.push(v);
+}
+
+std::vector<int> topologicalSort(GraphList &g)
+{
+	std::stack<int> queue;
+	std::vector<bool> visited(g.getVertices(), false);
+
+	for (int v = 0; v < g.getVertices(); ++v)
+	{
+		if (!visited[v])
+			topologicalSortUtil(g, v, queue, visited);
+	}
+
+	std::vector<int> sortResult;
+	while (!queue.empty())
+	{
+		sortResult.push_back(queue.top());
+		queue.pop();
+	}
+	return sortResult;
 }
