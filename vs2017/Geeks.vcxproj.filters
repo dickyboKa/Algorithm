@@ -140,5 +140,8 @@
     <ClInclude Include="..\Graph\CodingProblem.h">
       <Filter>Algorithm\Graph</Filter>
     </ClInclude>
+    <ClInclude Include="..\Graph\Graph.h">
+      <Filter>Algorithm\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

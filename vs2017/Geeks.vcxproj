@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Graph\CodingProblem.h" />
+    <ClInclude Include="..\Graph\Graph.h" />
     <ClInclude Include="..\Graph\GraphList.h" />
     <ClInclude Include="..\Graph\GraphMatrix.h" />
     <ClInclude Include="..\Greedy\CodingProblem.h" />
