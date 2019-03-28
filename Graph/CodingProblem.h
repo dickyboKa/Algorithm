@@ -106,3 +106,77 @@ void transformGraphToSpecificDegree(GraphList &g, int degree)
 		}
 	}
 }
+
+void findCycleDirected(GraphList &g, int v, std::vector<bool> &visited,
+	std::vector<bool> &onStack, bool &hasCyle)
+{
+	visited[v] = true;
+	onStack[v] = true;
+
+	for (auto adj_nodes = g.cbegin(v); adj_nodes != g.cend(v); ++adj_nodes)
+	{
+		if (!visited[*adj_nodes])
+			findCycleDirected(g, *adj_nodes, visited, onStack, hasCyle);
+		else if (onStack[*adj_nodes])
+		{
+			hasCyle = true;
+			return;
+		}
+
+	}
+	onStack[v] = false;
+}
+bool isDirectedGrapHasCycle(GraphList &g)
+{
+	bool hasCycle = false;
+	int cycleCount = 0;
+	std::vector<bool> visited(g.getVertices(), false);
+	std::vector<bool> onStack(g.getVertices(), false);
+
+	for (int v = 0; v < g.getVertices(); ++v)
+	{
+		if (!visited[v])
+			findCycleDirected(g, v, visited, onStack, hasCycle);
+		if (hasCycle)
+		{
+			++cycleCount;
+			hasCycle = false;
+		}
+	}
+	return cycleCount > 0;
+}
+
+void findCycleUndirected(GraphList &g, int v, int parent, std::vector<bool> &visited, bool &hasCyle)
+{
+	visited[v] = true;
+
+	for (auto adj_nodes = g.cbegin(v); adj_nodes != g.cend(v); ++adj_nodes)
+	{
+		if (!visited[*adj_nodes])
+			findCycleUndirected(g, *adj_nodes, v, visited, hasCyle);
+		else if (*adj_nodes != parent)
+		{
+			hasCyle = true;
+			return;
+		}
+
+	}
+}
+
+bool isUndirectedGraphHasCycle(GraphList &g)
+{
+	bool hasCycle = false;
+	int cycleCount = 0;
+	std::vector<bool> visited(g.getVertices(), false);
+	for (int v = 0; v < g.getVertices(); ++v)
+	{
+		if (!visited[v])
+			findCycleUndirected(g, v, v, visited, hasCycle);
+		if (hasCycle)
+		{
+			++cycleCount;
+			hasCycle = false;
+		}
+	}
+	return cycleCount > 0;
+}
