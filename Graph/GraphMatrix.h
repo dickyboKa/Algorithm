@@ -5,26 +5,26 @@
 class GraphMatrix
 {
 public:
-	GraphMatrix(int vertexSize) : graph(vertexSize), directed(false)
+	GraphMatrix(int vertexSize) : graph(vertexSize), directed(false), V(vertexSize)
 	{
 		// creating 2d array
 		for (int v = 0; v < vertexSize; ++v)
 			graph[v].resize(vertexSize);
 	};
 
-	GraphMatrix(int vertexSize, bool direct) : graph(vertexSize), directed(direct)
+	GraphMatrix(int vertexSize, bool direct) : graph(vertexSize), directed(direct), V(vertexSize)
 	{
 		// creating 2d array
 		for (int v = 0; v < vertexSize; ++v)
 			graph[v].resize(vertexSize);
 	};
 
-	void addEdge(int u, int v)
+	void addEdge(int u, int v, int weight = 0)
 	{
-		graph[u][v] = 1;
+		graph[u][v] = weight;
 		if (directed)
 			return;
-		graph[v][u] = 1;
+		graph[v][u] = weight;
 	}
 
 	void print()
@@ -41,7 +41,7 @@ public:
 			std::cout << std::endl;
 		}
 	}
-
+	int V;
 	auto operator[](int i) { return graph[i]; }
 private:
 	bool directed;

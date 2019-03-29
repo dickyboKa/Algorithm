@@ -156,6 +156,7 @@
     <ClInclude Include="..\Graph\Graph.h" />
     <ClInclude Include="..\Graph\GraphList.h" />
     <ClInclude Include="..\Graph\GraphMatrix.h" />
+    <ClInclude Include="..\Graph\PrimMST.h" />
     <ClInclude Include="..\Greedy\CodingProblem.h" />
     <ClInclude Include="..\Mathematical\Combinations.h" />
     <ClInclude Include="..\Mathematical\Utilities.h" />
