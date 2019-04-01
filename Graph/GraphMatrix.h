@@ -19,6 +19,8 @@ public:
 			graph[v].resize(vertexSize);
 	};
 
+	GraphMatrix(int vertexSize, std::vector<std::vector<int>> inputGraph) : V(vertexSize), graph(inputGraph) {};
+
 	void addEdge(int u, int v, int weight = 0)
 	{
 		graph[u][v] = weight;
