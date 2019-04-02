@@ -43,3 +43,35 @@ void printMaxActivites(std::vector<int> &startTime, std::vector<int> &finishTime
 		}
 	}
 }
+
+
+void printEgyptianFraction(int numerator, int denominator)
+{
+	if (numerator == 0 || denominator == 0)
+		return;
+
+	if (denominator % numerator == 0)
+	{
+		std::cout << "1/" << denominator / numerator;
+		return;
+	}
+
+	if (numerator % denominator == 0)
+	{
+		std::cout << numerator / denominator;
+		return;
+	}
+
+	// If numerator is more than denominator 
+	if (numerator > denominator)
+	{
+		std::cout << numerator / denominator << " + ";
+		printEgyptianFraction(numerator % denominator, denominator);
+		return;
+	}
+
+	int denominatorOfUnitFraction = denominator / numerator + 1;
+	std::cout << "1/" << denominatorOfUnitFraction << " + ";
+
+	printEgyptianFraction(numerator*denominatorOfUnitFraction - denominator, denominator*denominatorOfUnitFraction);
+}

@@ -146,5 +146,8 @@
     <ClInclude Include="..\Graph\PrimMST.h">
       <Filter>Algorithm\Graph</Filter>
     </ClInclude>
+    <ClInclude Include="..\Graph\DijkstraShortestPath.h">
+      <Filter>Algorithm\Graph</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
