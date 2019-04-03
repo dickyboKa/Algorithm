@@ -28,6 +28,9 @@
     <Filter Include="Algorithm\Greedy">
       <UniqueIdentifier>{868657ee-93e8-4525-ba27-46fd943be7fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm\Bit">
+      <UniqueIdentifier>{7a25c52d-768e-4ddf-a477-722128afb477}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp">
@@ -148,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="..\Graph\DijkstraShortestPath.h">
       <Filter>Algorithm\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bit\CodingProblem.h">
+      <Filter>Algorithm\Bit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
