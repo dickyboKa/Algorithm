@@ -21,3 +21,8 @@ int multiplyWiht3Point5(int x)
 {
 	return (x << 1) + x + (x >> 1);
 }
+
+int unsetRightmostBit(int x)
+{
+	return x & (x - 1);
+}
