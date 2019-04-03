@@ -31,6 +31,9 @@
     <Filter Include="Algorithm\Bit">
       <UniqueIdentifier>{7a25c52d-768e-4ddf-a477-722128afb477}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm\DivideConquer">
+      <UniqueIdentifier>{93d05d2a-dc38-4045-bb7a-d675cbf08cfd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="..\Bit\CodingProblem.h">
       <Filter>Algorithm\Bit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DivideConquer\CodingProblem.h">
+      <Filter>Algorithm\DivideConquer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
