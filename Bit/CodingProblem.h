@@ -16,3 +16,8 @@ int addOne(int x)
 	// if no more 1 to flip. lastly flip zero to 1
 	return x ^ flipper;
 }
+
+int multiplyWiht3Point5(int x)
+{
+	return (x << 1) + x + (x >> 1);
+}
