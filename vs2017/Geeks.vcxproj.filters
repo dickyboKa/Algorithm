@@ -34,6 +34,9 @@
     <Filter Include="Algorithm\DivideConquer">
       <UniqueIdentifier>{93d05d2a-dc38-4045-bb7a-d675cbf08cfd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm\Pattern">
+      <UniqueIdentifier>{aa6d9c4a-0f74-4ca2-94e3-46ab4e3d3c86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="..\DivideConquer\CodingProblem.h">
       <Filter>Algorithm\DivideConquer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Pattern\CodingProblem.h">
+      <Filter>Algorithm\Pattern</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
