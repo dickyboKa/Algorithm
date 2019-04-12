@@ -164,6 +164,7 @@
     <ClInclude Include="..\Mathematical\Combinations.h" />
     <ClInclude Include="..\Mathematical\Utilities.h" />
     <ClInclude Include="..\Pattern\CodingProblem.h" />
+    <ClInclude Include="..\Pattern\KMP.h" />
     <ClInclude Include="..\Searching\ArrayString.h" />
     <ClInclude Include="..\Searching\BinarySearch.h" />
     <ClInclude Include="..\Searching\ClosestElement.h" />

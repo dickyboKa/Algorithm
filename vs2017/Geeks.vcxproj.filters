@@ -167,5 +167,8 @@
     <ClInclude Include="..\Pattern\CodingProblem.h">
       <Filter>Algorithm\Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="..\Pattern\KMP.h">
+      <Filter>Algorithm\Pattern</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
