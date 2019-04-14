@@ -152,6 +152,8 @@
     <ClCompile Include="..\Searching\TournamentTree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\BackTracking\CodingProblem.h" />
+    <ClInclude Include="..\BackTracking\KnighTour.h" />
     <ClInclude Include="..\Bit\CodingProblem.h" />
     <ClInclude Include="..\DivideConquer\CodingProblem.h" />
     <ClInclude Include="..\Graph\CodingProblem.h" />

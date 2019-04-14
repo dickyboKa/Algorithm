@@ -37,6 +37,9 @@
     <Filter Include="Algorithm\Pattern">
       <UniqueIdentifier>{aa6d9c4a-0f74-4ca2-94e3-46ab4e3d3c86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm\BackTracking">
+      <UniqueIdentifier>{bd3a14d0-f3f3-49a5-a622-98b40f7b33ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp">
@@ -172,6 +175,12 @@
     </ClInclude>
     <ClInclude Include="..\Pattern\RabinKarp.h">
       <Filter>Algorithm\Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BackTracking\CodingProblem.h">
+      <Filter>Algorithm\BackTracking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BackTracking\KnighTour.h">
+      <Filter>Algorithm\BackTracking</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
