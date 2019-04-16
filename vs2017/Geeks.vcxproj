@@ -156,6 +156,7 @@
     <ClInclude Include="..\BackTracking\KnighTour.h" />
     <ClInclude Include="..\Bit\CodingProblem.h" />
     <ClInclude Include="..\DivideConquer\CodingProblem.h" />
+    <ClInclude Include="..\Geomethric\Lines.h" />
     <ClInclude Include="..\Graph\CodingProblem.h" />
     <ClInclude Include="..\Graph\DijkstraShortestPath.h" />
     <ClInclude Include="..\Graph\Graph.h" />
