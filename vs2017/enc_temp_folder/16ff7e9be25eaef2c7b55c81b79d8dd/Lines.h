@@ -85,7 +85,13 @@ int segmentUnionLength(const std::vector<std::pair<int, int>> &seg)
 
 	sort(points.begin(), points.end());
 
-	int result = 0;
+	for (auto it = points.cbegin(); it != points.cend(); ++it)
+	{
+		std::cout << it->first << " " << it->second << std::endl;
+	}
+	int result = 0; 
+
+
 	int Counter = 0;
 	for (unsigned i = 0; i < n * 2; i++)
 	{
