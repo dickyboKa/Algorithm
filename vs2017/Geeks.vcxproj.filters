@@ -40,6 +40,9 @@
     <Filter Include="Algorithm\BackTracking">
       <UniqueIdentifier>{bd3a14d0-f3f3-49a5-a622-98b40f7b33ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Algorithm\DP">
+      <UniqueIdentifier>{6c50ef7d-65e9-49cd-bd2f-7292e555a8e3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Geeks.cpp">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="..\BackTracking\KnighTour.h">
       <Filter>Algorithm\BackTracking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DP\Fibonacci.h">
+      <Filter>Algorithm\DP</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

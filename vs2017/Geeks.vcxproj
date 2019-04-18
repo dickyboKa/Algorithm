@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -156,6 +156,7 @@
     <ClInclude Include="..\BackTracking\KnighTour.h" />
     <ClInclude Include="..\Bit\CodingProblem.h" />
     <ClInclude Include="..\DivideConquer\CodingProblem.h" />
+    <ClInclude Include="..\DP\Fibonacci.h" />
     <ClInclude Include="..\Graph\CodingProblem.h" />
     <ClInclude Include="..\Graph\DijkstraShortestPath.h" />
     <ClInclude Include="..\Graph\Graph.h" />
