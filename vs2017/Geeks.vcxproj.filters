@@ -40,8 +40,13 @@
     <Filter Include="Algorithm\BackTracking">
       <UniqueIdentifier>{bd3a14d0-f3f3-49a5-a622-98b40f7b33ff}</UniqueIdentifier>
     </Filter>
+<<<<<<< HEAD
     <Filter Include="Algorithm\DP">
       <UniqueIdentifier>{6c50ef7d-65e9-49cd-bd2f-7292e555a8e3}</UniqueIdentifier>
+=======
+    <Filter Include="Algorithm\Geomethric">
+      <UniqueIdentifier>{e2f96443-ee81-4fe7-aa08-6c045f524810}</UniqueIdentifier>
+>>>>>>> 603e256efeba4aec4947d5afc2c46a1d395c8ac6
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -185,8 +190,13 @@
     <ClInclude Include="..\BackTracking\KnighTour.h">
       <Filter>Algorithm\BackTracking</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\DP\Fibonacci.h">
       <Filter>Algorithm\DP</Filter>
+=======
+    <ClInclude Include="..\Geomethric\Lines.h">
+      <Filter>Algorithm\Geomethric</Filter>
+>>>>>>> 603e256efeba4aec4947d5afc2c46a1d395c8ac6
     </ClInclude>
   </ItemGroup>
 </Project>
