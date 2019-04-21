@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="BackTracking">
+      <UniqueIdentifier>{8bb7fd1c-54f8-4f2a-882f-78bee3de4aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bit">
+      <UniqueIdentifier>{a6af732b-e9f9-493a-b875-7544e3c02b42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DivideConquer">
+      <UniqueIdentifier>{63d7c253-6528-446f-bcb5-cb4a24e6ac19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DP">
+      <UniqueIdentifier>{9c1e82e3-3f3a-4564-b964-0683cdf72c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Geomethric">
+      <UniqueIdentifier>{6b1ffc5f-24ab-4fc9-a0ed-835cf19bf901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graph">
+      <UniqueIdentifier>{3aa99fe8-023f-42df-b129-81f0951d8f5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Greedy">
+      <UniqueIdentifier>{9b171916-2155-45f6-9229-f16ab9733d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mathematical">
+      <UniqueIdentifier>{1fb5997c-3dfe-489b-8562-178737efcdf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{36f2e505-83fa-4c5f-ad51-9e52c1492531}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Searching">
+      <UniqueIdentifier>{b6a28c66-7e3b-429a-86aa-c0e578546199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sorting">
+      <UniqueIdentifier>{c776be58-527b-4eef-805b-90e9a42586c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Algo.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Graph\GraphList.cpp">
+      <Filter>Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Searching\TournamentTree.cpp">
+      <Filter>Searching</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\BackTracking\CodingProblem.h">
+      <Filter>BackTracking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\BackTracking\KnighTour.h">
+      <Filter>BackTracking</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Bit\CodingProblem.h">
+      <Filter>Bit</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DivideConquer\CodingProblem.h">
+      <Filter>DivideConquer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\DP\Fibonacci.h">
+      <Filter>DP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Geomethric\Lines.h">
+      <Filter>Geomethric</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\CodingProblem.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\DijkstraShortestPath.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\Graph.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\GraphList.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\GraphMatrix.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Graph\PrimMST.h">
+      <Filter>Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Greedy\CodingProblem.h">
+      <Filter>Greedy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mathematical\Combinations.h">
+      <Filter>Mathematical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mathematical\Utilities.h">
+      <Filter>Mathematical</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\BubbleSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\CodingProblems.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\CombSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\CountSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\HeapSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\InsertionSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\MergeSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\QuickSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\RadixSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\SelectionSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\ShellSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sorting\TimSort.h">
+      <Filter>Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\ArrayString.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\BinarySearch.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\ClosestElement.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\CommonElement.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\CountOne.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\LargestElement.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\PairSortedArray.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\Queries.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\RationalArray.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\RepeatedElement.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\RotateArray.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\SearchElement.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\SmallestElement.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\SortedArray.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Searching\TournamentTree.h">
+      <Filter>Searching</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Pattern\CodingProblem.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Pattern\KMP.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Pattern\RabinKarp.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
