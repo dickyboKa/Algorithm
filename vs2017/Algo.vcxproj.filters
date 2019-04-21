@@ -186,5 +186,8 @@
     <ClInclude Include="..\Pattern\RabinKarp.h">
       <Filter>Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="..\DP\CodingProblem.h">
+      <Filter>DP</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
