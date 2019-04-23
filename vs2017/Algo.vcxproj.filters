@@ -192,5 +192,8 @@
     <ClInclude Include="..\Mathematical\GCD.h">
       <Filter>Mathematical</Filter>
     </ClInclude>
+    <ClInclude Include="..\Mathematical\LCM.h">
+      <Filter>Mathematical</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
