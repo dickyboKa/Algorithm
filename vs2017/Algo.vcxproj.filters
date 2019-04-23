@@ -195,5 +195,8 @@
     <ClInclude Include="..\Mathematical\LCM.h">
       <Filter>Mathematical</Filter>
     </ClInclude>
+    <ClInclude Include="..\Greedy\JobSequencing.h">
+      <Filter>Greedy</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

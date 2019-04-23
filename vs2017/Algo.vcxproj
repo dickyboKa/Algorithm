@@ -38,6 +38,7 @@
     <ClInclude Include="..\Graph\GraphMatrix.h" />
     <ClInclude Include="..\Graph\PrimMST.h" />
     <ClInclude Include="..\Greedy\CodingProblem.h" />
+    <ClInclude Include="..\Greedy\JobSequencing.h" />
     <ClInclude Include="..\Mathematical\Combinations.h" />
     <ClInclude Include="..\Mathematical\GCD.h" />
     <ClInclude Include="..\Mathematical\LCM.h" />
