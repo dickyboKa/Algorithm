@@ -189,5 +189,8 @@
     <ClInclude Include="..\DP\CodingProblem.h">
       <Filter>DP</Filter>
     </ClInclude>
+    <ClInclude Include="..\Mathematical\GCD.h">
+      <Filter>Mathematical</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

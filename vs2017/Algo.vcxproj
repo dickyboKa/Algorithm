@@ -39,6 +39,7 @@
     <ClInclude Include="..\Graph\PrimMST.h" />
     <ClInclude Include="..\Greedy\CodingProblem.h" />
     <ClInclude Include="..\Mathematical\Combinations.h" />
+    <ClInclude Include="..\Mathematical\GCD.h" />
     <ClInclude Include="..\Mathematical\Utilities.h" />
     <ClInclude Include="..\Pattern\CodingProblem.h" />
     <ClInclude Include="..\Pattern\KMP.h" />
