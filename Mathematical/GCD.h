@@ -1,9 +1,10 @@
 #pragma once
 
 
-int gcdEuclidean(int a, int b)
+int gcd(int a, int b)
 {
 	if (a == 0)
 		return b;
-	return gcdEuclidean(b % a, a);
+	return gcd(b % a, a);
 }
+
