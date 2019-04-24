@@ -10,36 +10,67 @@ struct Job
 	int profit;
 };
 
+class SlotSet
+{
+public:
+	SlotSet(int n)
+	{
+		for (int i = 0; i <= n; i++)
+			parent.push_back(i);
+	}
+
+	int findAvailableSlot(int s)
+	{
+		if (s == parent[s])
+			return s;
+		return parent[s] = findAvailableSlot(parent[s]);
+	}
+
+	void saveForNextSlot(int u, int v)
+	{
+		parent[v] = u;
+	}
+private:	
+	std::vector<int> parent;
+};
+
 bool byProfit(Job a, Job b)
 {
 	return a.profit > b.profit;
 }
 
+bool byDeadLineAscending(Job a, Job b)
+{
+	return a.deadLine < b.deadLine;
+}
+int findMaxDeadline(std::vector<Job> &jobs)
+{
+	int result = std::numeric_limits<int>::min();
+	for(auto it = jobs.cbegin(); it != jobs.cend(); ++it)
+		result = std::max(result, it->deadLine);
+	return result;
+}
+
 void printJobScheduling(std::vector<Job> jobs)
 {
-	int jobsCount = jobs.size();
 
 	std::sort(jobs.begin(), jobs.end(), byProfit);
-
-	std::vector<int> result(jobsCount);
-	std::vector<bool> slot(jobsCount, false);
-
-	for (int i = 0; i < jobsCount; ++i)
+	SlotSet slotSet(findMaxDeadline(jobs));
+	std::vector<Job> result;
+	for (auto it = jobs.cbegin(); it != jobs.cend(); ++it)
 	{
-		for (int j = std::min(jobsCount, jobs[i].deadLine) - 1; j >= 0; j--)
+		int availableSlot = slotSet.findAvailableSlot(it->deadLine);
+		if (availableSlot > 0)
 		{
-			if (!slot[j])
-			{
-				result[j] = i;
-				slot[j] = true;
-				break;
-			}
+			result.push_back(*it);
+			slotSet.saveForNextSlot(slotSet.findAvailableSlot(availableSlot - 1), availableSlot);
 		}
 	}
 
-	for (int i = 0; i < jobsCount; i++)
+	std::sort(result.begin(), result.end(), byDeadLineAscending);
+	for (auto it = result.cbegin(); it != result.cend(); ++it)
 	{
-		if (slot[i])
-			std::cout << jobs[result[i]].id << " ";
+		std::cout << it->id << " ";
 	}
+
 }
