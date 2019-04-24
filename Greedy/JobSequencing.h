@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <assert.h>
 
 struct Job
 {
@@ -73,4 +74,42 @@ void printJobScheduling(std::vector<Job> jobs)
 		std::cout << it->id << " ";
 	}
 
+}
+
+
+// lost minimization
+
+// each job consist of index, and pair of loss, and timeToFinish
+typedef std::pair<int, std::pair<int, int> > job;
+
+bool sortByRatioOFLossAndTimeToFinish(job a, job b)
+{
+	int a_loss, a_time, b_loss, b_time;
+	a_loss = a.second.first;
+	a_time = a.second.second;
+	b_loss = b.second.first;
+	b_time = b.second.second;
+	return (a_loss * b_time) > (a_time * b_loss);
+}
+
+
+void printJobSchedulingWithMinimumLoss(std::vector<int> loss, std::vector<int> timeToFinish)
+{
+	std::vector<job> jobs;
+	assert(loss.size() == timeToFinish.size());
+
+	for (int i = 0; i < loss.size(); ++i)
+	{
+		int ls = loss[i];
+		int finishTime = timeToFinish[i];
+		jobs.push_back(std::make_pair(i + 1, std::make_pair(ls, finishTime)));
+	}
+
+	std::stable_sort(jobs.begin(), jobs.end(), sortByRatioOFLossAndTimeToFinish);
+
+	std::cout << "Job numbers in optimal sequence are\n";
+	for (auto it = jobs.cbegin(); it != jobs.cend(); ++it)
+	{
+		std::cout << it->first << " ";
+	}
 }
