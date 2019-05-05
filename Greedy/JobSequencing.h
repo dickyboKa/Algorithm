@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <queue>
 #include <assert.h>
 
 struct Job
@@ -112,4 +113,34 @@ void printJobSchedulingWithMinimumLoss(std::vector<int> loss, std::vector<int> t
 	{
 		std::cout << it->first << " ";
 	}
+}
+
+
+// Job Selection Problem – Loss Minimization Strategy | Set 2
+
+void optimumSequenceJob(std::vector<int> &jobs, double decayingPercentage)
+{
+	int fillIndex = 1;
+	int arrSize = jobs.size() - 1;
+	std::priority_queue<int, std::vector<int>, std::greater<int> > queueJobs;
+
+	for (int i = 1; i <= arrSize; ++i)
+	{
+		queueJobs.push(jobs[i]);
+	}
+
+	while (!queueJobs.empty())
+	{
+		std::cout << queueJobs.top();
+
+		jobs[fillIndex++] = queueJobs.top();
+		queueJobs.pop();
+	}
+
+	double result = 0;
+	for (int i = arrSize; i >= 1; --i)
+	{
+		result += pow((1 - decayingPercentage), arrSize - i) * jobs[i];
+	}
+	std::cout << std::endl << result;
 }
