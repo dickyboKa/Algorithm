@@ -46,9 +46,9 @@ std::vector<int> GraphList::breadthFirstSearch(int vectorStart)
 	while (!queueVertexToGo.empty())
 	{
 		int currentlyOnVertex = queueVertexToGo.front();
+		queueVertexToGo.pop_front();
 		// actually we can do anything here for the vertex that already found, but for now just populate it into path array
 		path.push_back(currentlyOnVertex);
-		queueVertexToGo.pop_front();
 
 		for (auto it_vertices = graph[currentlyOnVertex].cbegin();
 			it_vertices != graph[currentlyOnVertex].cend(); ++it_vertices)

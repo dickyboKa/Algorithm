@@ -216,3 +216,40 @@ std::vector<int> topologicalSort(GraphList &g)
 	}
 	return sortResult;
 }
+
+int countNodeInParticularLevel(int start, GraphList &g, int lvl)
+{
+	std::list<int> queue;
+	std::vector<bool> visited(g.getVertices(), false);
+	std::vector<int> level(g.getVertices(), 0);
+
+	queue.push_front(start);
+	visited[start] = true;
+	level[start] = 0;
+
+	while (!queue.empty())
+	{
+		int v = queue.front();
+		queue.pop_front();
+
+		for (auto adj_vertex = g.cbegin(v); adj_vertex != g.cend(v); ++adj_vertex)
+		{
+			if (!visited[*adj_vertex])
+			{
+				queue.push_back(*adj_vertex);
+				visited[*adj_vertex] = true;
+				level[*adj_vertex] = level[v] + 1;
+			}
+		}
+	}
+
+	int result = 0;
+
+	for (auto it = level.cbegin(); it != level.cend(); ++it)
+	{
+		if (*it == lvl)
+			result++;
+	}
+
+	return result;
+}
