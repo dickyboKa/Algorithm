@@ -253,3 +253,32 @@ int countNodeInParticularLevel(int start, GraphList &g, int lvl)
 
 	return result;
 }
+
+void countPathUtil(int vertex, int destination, std::vector<bool> &visited, GraphList &g, int &pathCount)
+{
+	visited[vertex] = true;
+
+	if (vertex == destination)
+		pathCount++;
+	else
+	{
+		for (auto adj_vertex = g.cbegin(vertex); adj_vertex != g.cend(vertex); ++adj_vertex)
+		{
+			if (!visited[*adj_vertex])
+			{
+				countPathUtil(*adj_vertex, destination, visited, g, pathCount);
+			}
+		}
+	}
+
+	visited[vertex] = false;
+}
+
+int countPath(int start, int destination, GraphList &g)
+{
+	std::vector<bool> visited(g.getVertices(), false);
+
+	int result = 0;
+	countPathUtil(start, destination, visited, g, result);
+	return result;
+}
